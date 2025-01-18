@@ -22,14 +22,14 @@
   $.Scrollax();
 
 
-	var fullHeight = function() {
-
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
-
-	};
+var fullHeight = function() {
+    if ($(window).width() > 768) {
+        $('.js-fullheight').css('height', $(window).height());
+    } else {
+        $('.js-fullheight').css('height', 'auto');
+    }
+};
+$(window).on('resize', fullHeight);
 	fullHeight();
 
 	// loader
