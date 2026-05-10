@@ -1,17 +1,17 @@
 # Adya Yoga Frontend Spec
 
 ## Product Goal
-Adya Yoga is a refined, trust-first yoga website for Vaishnavi Simha, a Rishikesh-certified Ashtanga yoga teacher. The site should help visitors understand the teaching style, choose a class format, and begin booking through frontend-only interactions.
+Adya Yoga is a refined, trust-first yoga website for Vaishnavi Simha, a Rishikesh-certified Traditional Yoga teacher. The site should help visitors understand the teaching style, choose a class format, and begin booking through frontend-only interactions.
 
 ## Research Signals
 - Yoga studio sites convert best when the schedule and booking path are prominent, not buried behind brand storytelling.
 - Rishikesh and certification cues are common trust builders in Indian yoga positioning, but they need restrained presentation to avoid feeling generic.
-- Ashtanga audiences expect discipline, lineage, breath, sequence, and steady progression; the tone should be grounded rather than spa-like.
+- Traditional Yoga audiences expect discipline, lineage, breath, alignment, and steady progression; the tone should be grounded rather than spa-like.
 - Wellness design trends favor tactile natural palettes, calm typography, human photography, concise proof points, and mobile-first contact flows.
 
 ## Audience
 - Beginners who want a safe, guided entry into yoga.
-- Returning students looking for an Ashtanga-led or Mysore-style practice.
+- Returning students looking for Hatha Vinyasa, Ashtanga Vinyasa, Pranayama, meditation, or deeper private practice.
 - Busy professionals seeking private or small-group sessions.
 
 ## UX Principles
@@ -22,7 +22,7 @@ Adya Yoga is a refined, trust-first yoga website for Vaishnavi Simha, a Rishikes
 
 ## Information Architecture
 - Hero with brand, teacher, style, CTAs, credibility stats, and next classes.
-- Practice paths: Foundations, Led Ashtanga, Private Sessions.
+- Practice details: Ashtanga Vinyasa Yoga, Hatha Vinyasa Yoga, and Pranayama & Meditation are explained inline as parts of the regular class experience, not separate dedicated classes.
 - Teacher section with certification and teaching philosophy.
 - Schedule section with day/style filter.
 - Booking drawer with selected class summary and contact choices.

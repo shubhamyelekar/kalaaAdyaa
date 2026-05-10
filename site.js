@@ -9,9 +9,16 @@ const bookingForm = document.querySelector("[data-booking-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const whatsappSubmit = document.querySelector("[data-whatsapp-submit]");
 const filters = document.querySelectorAll("[data-filter]");
-const classRows = document.querySelectorAll(".class-row");
+const scheduleList = document.querySelector("[data-schedule-list]");
+const nextClassTitle = document.querySelector("[data-next-class-title]");
+const nextClassMeta = document.querySelector("[data-next-class-meta]");
+const nextClassLocation = document.querySelector("[data-next-class-location]");
+const nextClassButton = document.querySelector("[data-book-next-class]");
 const whatsappLinks = document.querySelectorAll("[data-whatsapp-link]");
 const whatsappNumber = "917090855044";
+const schedule = window.ADYA_SCHEDULE || [];
+let currentFilter = "all";
+let nextClassName = "Traditional Yoga Class";
 
 const buildWhatsAppUrl = (details = {}) => {
   const className = details.className || selectedClass.textContent || "Adya Yoga class";
@@ -42,6 +49,55 @@ const updateContactLinks = () => {
   });
 };
 
+const getNextClass = () => {
+  if (!schedule.length) return null;
+  const now = new Date();
+  const currentHour = now.getHours() + now.getMinutes() / 60;
+  return schedule.find((item) => item.startHour > currentHour) || schedule[0];
+};
+
+const updateNextClass = () => {
+  const nextClass = getNextClass();
+  if (!nextClass) return;
+  nextClassName = nextClass.title;
+  nextClassTitle.textContent = nextClass.title;
+  nextClassMeta.textContent = `${nextClass.time} - ${nextClass.duration}`;
+  nextClassLocation.textContent = `${nextClass.format} - ${nextClass.location}`;
+};
+
+const renderSchedule = () => {
+  const visibleSchedule = schedule.filter((item) => {
+    return currentFilter === "all" || item.period === currentFilter || item.mode === currentFilter;
+  });
+
+  scheduleList.innerHTML = visibleSchedule.map((item) => {
+    const modeLabel = item.mode.charAt(0).toUpperCase() + item.mode.slice(1);
+    const modeTagClass = item.mode === "offline"
+      ? "bg-clay/10 text-clay border-clay/20"
+      : "bg-forest/10 text-forest border-forest/20";
+    return `
+      <article class="class-row grid gap-3 py-6 md:grid-cols-[170px_1fr_auto] md:items-center md:gap-8" data-tags="${item.period} ${item.mode}">
+        <time class="font-black text-clay">${item.time}</time>
+        <div>
+          <h3 class="text-xl font-extrabold text-forest">${item.title}</h3>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="rounded-full border px-3 py-1 text-xs font-black uppercase ${modeTagClass}">${modeLabel}</span>
+            <span class="rounded-full border border-forest/15 bg-ivory px-3 py-1 text-xs font-black uppercase text-forest">${item.format}</span>
+            <span class="rounded-full border border-forest/15 bg-ivory px-3 py-1 text-xs font-black uppercase text-forest">${item.duration}</span>
+          </div>
+          <p class="mt-1 text-sm text-ink/56">${item.location}</p>
+          <p class="mt-2 leading-7 text-ink/62">${item.description}</p>
+        </div>
+        <button class="w-fit rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5" type="button" data-book-class="${item.title} (${item.time})">Book</button>
+      </article>
+    `;
+  }).join("");
+
+  scheduleList.querySelectorAll("[data-book-class]").forEach((button) => {
+    button.addEventListener("click", () => openBooking(button.dataset.bookClass));
+  });
+};
+
 const setHeaderState = () => {
   header.classList.toggle("scrolled", window.scrollY > 20);
 };
@@ -66,6 +122,8 @@ const closeBooking = () => {
 
 window.addEventListener("scroll", setHeaderState);
 setHeaderState();
+updateNextClass();
+renderSchedule();
 updateContactLinks();
 
 navToggle.addEventListener("click", () => {
@@ -90,6 +148,8 @@ document.querySelectorAll("[data-book-class]").forEach((button) => {
   button.addEventListener("click", () => openBooking(button.dataset.bookClass));
 });
 
+nextClassButton.addEventListener("click", () => openBooking(nextClassName));
+
 document.querySelector("[data-close-booking]").addEventListener("click", closeBooking);
 backdrop.addEventListener("click", closeBooking);
 
@@ -99,15 +159,13 @@ document.addEventListener("keydown", (event) => {
 
 filters.forEach((filter) => {
   filter.addEventListener("click", () => {
-    const value = filter.dataset.filter;
+    currentFilter = filter.dataset.filter;
     filters.forEach((item) => {
       const isActive = item === filter;
       item.classList.toggle("active", isActive);
       item.setAttribute("aria-selected", String(isActive));
     });
-    classRows.forEach((row) => {
-      row.classList.toggle("hidden", !(value === "all" || row.dataset.tags.includes(value)));
-    });
+    renderSchedule();
   });
 });
 
