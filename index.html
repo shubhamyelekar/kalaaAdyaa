@@ -1,265 +1,253 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Adya Yoga offers Ashtanga yoga classes with Vaishnavi Simha, a Rishikesh-certified teacher."
-    />
+    <meta name="description" content="Adya Yoga offers refined Ashtanga yoga classes with Vaishnavi Simha, a Rishikesh-certified teacher." />
+    <meta property="og:title" content="Adya Yoga | Ashtanga Yoga with Vaishnavi Simha" />
+    <meta property="og:description" content="A warm, disciplined Ashtanga yoga practice for beginners, returning practitioners, and private students." />
+    <meta property="og:type" content="website" />
     <title>Adya Yoga | Ashtanga Yoga with Vaishnavi Simha</title>
     <link rel="preconnect" href="https://images.unsplash.com" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ivory: "#fbf7ee",
+              paper: "#fffdf8",
+              mist: "#e9eee3",
+              sage: "#6f8064",
+              forest: "#18362d",
+              moss: "#385248",
+              clay: "#b75f3f",
+              amber: "#d0a85a",
+              ink: "#17211d"
+            },
+            fontFamily: {
+              display: ["Georgia", "Times New Roman", "serif"],
+              body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+            },
+            boxShadow: {
+              soft: "0 24px 70px rgba(18, 39, 32, 0.16)"
+            }
+          }
+        }
+      };
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Adya Yoga home">
-        <span class="brand-mark">A</span>
+  <body class="bg-ivory font-body text-ink antialiased">
+    <header class="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-5 py-4 text-paper transition duration-200 md:px-10 lg:px-14" data-header>
+      <a class="flex items-center gap-3 font-extrabold" href="#top" aria-label="Adya Yoga home">
+        <span class="grid size-9 place-items-center rounded-full border border-current font-display text-lg">A</span>
         <span>Adya Yoga</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
-        <span></span>
-        <span></span>
+      <button class="grid size-11 place-items-center rounded-full border border-current md:hidden" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span class="block h-0.5 w-5 bg-current"></span>
+        <span class="mt-1.5 block h-0.5 w-5 bg-current"></span>
       </button>
-      <nav class="site-nav" data-nav>
-        <a href="#practice">Practice</a>
-        <a href="#teacher">Teacher</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#faq">FAQ</a>
-        <button class="nav-cta" type="button" data-open-booking>Book</button>
+      <nav class="hidden items-center gap-7 text-sm font-semibold md:flex" data-nav>
+        <a class="opacity-90 transition hover:opacity-100" href="#practice">Practice</a>
+        <a class="opacity-90 transition hover:opacity-100" href="#teacher">Teacher</a>
+        <a class="opacity-90 transition hover:opacity-100" href="#schedule">Schedule</a>
+        <a class="opacity-90 transition hover:opacity-100" href="#faq">FAQ</a>
+        <button class="rounded-full bg-paper px-5 py-3 font-extrabold text-forest transition hover:-translate-y-0.5" type="button" data-open-booking>Book a class</button>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="hero-media" role="img" aria-label="Yoga student practicing in a warm studio"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Rishikesh-certified Ashtanga yoga</p>
-          <h1>Adya Yoga</h1>
-          <p class="hero-copy">
-            Steady breath, honest alignment, and a practice that meets your body where it is.
-            Learn Ashtanga yoga with Vaishnavi Simha through guided group classes and focused
-            private sessions.
-          </p>
-          <div class="hero-actions">
-            <button class="primary-action" type="button" data-open-booking>Reserve a class</button>
-            <a class="secondary-action" href="#schedule">View schedule</a>
+      <section class="relative grid min-h-[94vh] overflow-hidden text-paper">
+        <div class="hero-image absolute inset-0"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,33,28,0.84),rgba(16,33,28,0.34)_48%,rgba(16,33,28,0.12)),linear-gradient(0deg,rgba(24,54,45,0.72),rgba(24,54,45,0.1)_52%,rgba(24,54,45,0.32))]"></div>
+        <div class="relative z-10 flex min-h-[94vh] flex-col justify-end px-5 pb-7 pt-28 md:px-10 lg:px-14">
+          <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end">
+            <div class="max-w-4xl pb-10 lg:pb-16">
+              <p class="mb-4 text-xs font-black uppercase text-amber">Rishikesh-certified Ashtanga yoga</p>
+              <h1 class="font-display text-[4.5rem] leading-none md:text-[8rem] lg:text-[10.5rem]">Adya Yoga</h1>
+              <p class="mt-6 max-w-2xl text-lg leading-8 text-paper/86 md:text-xl">
+                A grounded Ashtanga practice led by Vaishnavi Simha. Breath-led movement,
+                careful alignment, and a steady path for beginners and committed practitioners.
+              </p>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <button class="inline-flex min-h-12 items-center justify-center rounded-full bg-amber px-6 font-extrabold text-ink transition hover:-translate-y-0.5" type="button" data-open-booking>Reserve a class</button>
+                <a class="inline-flex min-h-12 items-center justify-center rounded-full border border-paper/60 px-6 font-extrabold text-paper transition hover:-translate-y-0.5" href="#schedule">View weekly schedule</a>
+              </div>
+            </div>
+
+            <aside class="rounded-lg border border-paper/30 bg-paper/14 p-5 shadow-soft backdrop-blur-xl" aria-label="Upcoming classes">
+              <p class="mb-4 text-xs font-black uppercase text-amber">Next practice</p>
+              <div class="space-y-4">
+                <div class="flex items-start justify-between gap-4 border-b border-paper/20 pb-4">
+                  <div>
+                    <strong class="block text-lg">Morning Led Ashtanga</strong>
+                    <span class="mt-1 block text-sm text-paper/72">Tue - 6:30 AM - 75 min</span>
+                  </div>
+                  <button class="rounded-full bg-paper px-4 py-2 text-sm font-extrabold text-forest transition hover:-translate-y-0.5" type="button" data-book-class="Morning Led Ashtanga">Book</button>
+                </div>
+                <div class="grid grid-cols-3 gap-3 text-sm">
+                  <div><strong class="block text-xl">RYS</strong><span class="text-paper/70">Rishikesh trained</span></div>
+                  <div><strong class="block text-xl">3</strong><span class="text-paper/70">Practice paths</span></div>
+                  <div><strong class="block text-xl">1:1</strong><span class="text-paper/70">Private support</span></div>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
-        <aside class="next-panel" aria-label="Upcoming classes">
+      </section>
+
+      <section class="grid border-b border-forest/15 bg-paper md:grid-cols-4">
+        <div class="border-b border-forest/15 p-6 md:border-b-0 md:border-r lg:p-8"><strong class="block text-lg text-forest">Rishikesh</strong><span class="mt-2 block text-sm leading-6 text-ink/62">Certified study and lineage-aware teaching.</span></div>
+        <div class="border-b border-forest/15 p-6 md:border-b-0 md:border-r lg:p-8"><strong class="block text-lg text-forest">Ashtanga</strong><span class="mt-2 block text-sm leading-6 text-ink/62">Breath, count, sequence, and consistency.</span></div>
+        <div class="border-b border-forest/15 p-6 md:border-b-0 md:border-r lg:p-8"><strong class="block text-lg text-forest">Small Batches</strong><span class="mt-2 block text-sm leading-6 text-ink/62">Enough attention for thoughtful corrections.</span></div>
+        <div class="p-6 lg:p-8"><strong class="block text-lg text-forest">Beginner-Safe</strong><span class="mt-2 block text-sm leading-6 text-ink/62">Clear modifications without diluting the method.</span></div>
+      </section>
+
+      <section class="px-5 py-20 md:px-10 md:py-28 lg:px-14" id="practice">
+        <div class="max-w-3xl">
+          <p class="mb-3 text-xs font-black uppercase text-clay">Choose your rhythm</p>
+          <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">Practice that feels disciplined, not severe.</h2>
+          <p class="mt-6 text-lg leading-8 text-ink/62">Adya Yoga keeps Ashtanga precise and humane. You get structure, warmth, and options that respect your current strength, mobility, and confidence.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 lg:grid-cols-3">
+          <article class="rounded-lg border border-forest/15 bg-paper p-7">
+            <span class="text-sm font-black text-clay">01</span>
+            <h3 class="mt-8 text-2xl font-extrabold text-forest">Foundations</h3>
+            <p class="mt-4 min-h-24 leading-7 text-ink/62">Sun salutations, standing postures, breath, and safe transitions for new students.</p>
+            <button class="mt-5 rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5" type="button" data-book-class="Ashtanga Foundations">Start here</button>
+          </article>
+          <article class="rounded-lg bg-forest p-7 text-paper shadow-soft">
+            <span class="text-sm font-black text-amber">02</span>
+            <h3 class="mt-8 text-2xl font-extrabold">Led Ashtanga</h3>
+            <p class="mt-4 min-h-24 leading-7 text-paper/70">A guided primary-series practice with rhythm, count, alignment, and steady breath.</p>
+            <button class="mt-5 rounded-full bg-amber px-5 py-3 font-extrabold text-ink transition hover:-translate-y-0.5" type="button" data-book-class="Led Ashtanga">Join a class</button>
+          </article>
+          <article class="rounded-lg border border-forest/15 bg-paper p-7">
+            <span class="text-sm font-black text-clay">03</span>
+            <h3 class="mt-8 text-2xl font-extrabold text-forest">Private Sessions</h3>
+            <p class="mt-4 min-h-24 leading-7 text-ink/62">One-to-one plans for injuries, confidence, home practice, or deeper progression.</p>
+            <button class="mt-5 rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5" type="button" data-book-class="Private Session">Request slot</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="grid bg-mist lg:grid-cols-[0.92fr_1.08fr]" id="teacher">
+        <div class="teacher-image min-h-[430px] lg:min-h-[760px]"></div>
+        <div class="self-center px-5 py-16 md:px-10 md:py-24 lg:px-16">
+          <p class="mb-3 text-xs font-black uppercase text-clay">Teacher</p>
+          <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">Vaishnavi Simha</h2>
+          <p class="mt-6 text-lg leading-8 text-ink/64">Vaishnavi teaches Ashtanga yoga with a focus on breath, alignment, and consistency. Her Rishikesh certification anchors the practice in traditional study while her classes stay clear, approachable, and responsive to real bodies.</p>
+          <div class="my-8 border-y border-forest/15 py-6">
+            <p class="font-display text-3xl leading-tight text-forest">"The aim is not to force a posture. The aim is to return to attention, one breath at a time."</p>
+          </div>
+          <div class="grid gap-3 text-sm font-bold text-forest sm:grid-cols-3">
+            <div class="rounded-lg border border-forest/15 bg-paper/70 p-4">Rishikesh certified</div>
+            <div class="rounded-lg border border-forest/15 bg-paper/70 p-4">Ashtanga focused</div>
+            <div class="rounded-lg border border-forest/15 bg-paper/70 p-4">Private coaching</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-paper px-5 py-20 md:px-10 md:py-28 lg:px-14" id="schedule">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-2xl">
+            <p class="mb-3 text-xs font-black uppercase text-clay">Weekly schedule</p>
+            <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">Find the class that fits today.</h2>
+          </div>
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Class filters">
+            <button class="filter active rounded-full border border-forest/15 px-5 py-3 text-sm font-extrabold" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter rounded-full border border-forest/15 px-5 py-3 text-sm font-extrabold" type="button" data-filter="beginner" role="tab" aria-selected="false">Beginner</button>
+            <button class="filter rounded-full border border-forest/15 px-5 py-3 text-sm font-extrabold" type="button" data-filter="ashtanga" role="tab" aria-selected="false">Ashtanga</button>
+            <button class="filter rounded-full border border-forest/15 px-5 py-3 text-sm font-extrabold" type="button" data-filter="private" role="tab" aria-selected="false">Private</button>
+          </div>
+        </div>
+
+        <div class="mt-10 divide-y divide-forest/15 border-y border-forest/15">
+          <article class="class-row grid gap-3 py-6 md:grid-cols-[170px_1fr_auto] md:items-center md:gap-8" data-tags="ashtanga">
+            <time class="font-black text-clay">Mon - 6:30 AM</time>
+            <div><h3 class="text-xl font-extrabold text-forest">Morning Led Ashtanga</h3><p class="mt-1 text-ink/62">75 min - steady primary-series rhythm</p></div>
+            <button class="w-fit rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5" type="button" data-book-class="Morning Led Ashtanga">Book</button>
+          </article>
+          <article class="class-row grid gap-3 py-6 md:grid-cols-[170px_1fr_auto] md:items-center md:gap-8" data-tags="beginner ashtanga">
+            <time class="font-black text-clay">Wed - 7:00 PM</time>
+            <div><h3 class="text-xl font-extrabold text-forest">Ashtanga Foundations</h3><p class="mt-1 text-ink/62">60 min - breath, basics, and modifications</p></div>
+            <button class="w-fit rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5" type="button" data-book-class="Ashtanga Foundations">Book</button>
+          </article>
+          <article class="class-row grid gap-3 py-6 md:grid-cols-[170px_1fr_auto] md:items-center md:gap-8" data-tags="ashtanga">
+            <time class="font-black text-clay">Fri - 6:30 AM</time>
+            <div><h3 class="text-xl font-extrabold text-forest">Mysore-Style Guided Practice</h3><p class="mt-1 text-ink/62">90 min - individual pace with teacher support</p></div>
+            <button class="w-fit rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5" type="button" data-book-class="Mysore-Style Guided Practice">Book</button>
+          </article>
+          <article class="class-row grid gap-3 py-6 md:grid-cols-[170px_1fr_auto] md:items-center md:gap-8" data-tags="private beginner">
+            <time class="font-black text-clay">Sat - by request</time>
+            <div><h3 class="text-xl font-extrabold text-forest">Private Yoga Session</h3><p class="mt-1 text-ink/62">60 min - personalized practice plan</p></div>
+            <button class="w-fit rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5" type="button" data-book-class="Private Yoga Session">Request</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="relative overflow-hidden bg-forest px-5 py-16 text-paper md:px-10 md:py-24 lg:px-14">
+        <div class="absolute inset-y-0 right-0 hidden w-2/5 bg-[url('https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1100&q=82')] bg-cover bg-center opacity-35 lg:block"></div>
+        <div class="relative z-10 flex max-w-5xl flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <span class="panel-kicker">Next practice</span>
-            <strong>Morning Led Ashtanga</strong>
-            <p>Tue - 6:30 AM - 75 min</p>
+            <p class="mb-3 text-xs font-black uppercase text-amber">Begin with one class</p>
+            <h2 class="font-display text-5xl leading-tight md:text-7xl">Come for the sequence. Stay for the steadiness.</h2>
           </div>
-          <button type="button" data-book-class="Morning Led Ashtanga">Book</button>
-        </aside>
-      </section>
-
-      <section class="trust-strip" aria-label="Practice highlights">
-        <div>
-          <strong>Rishikesh</strong>
-          <span>Certified training</span>
-        </div>
-        <div>
-          <strong>Ashtanga</strong>
-          <span>Breath-led sequence</span>
-        </div>
-        <div>
-          <strong>Small batches</strong>
-          <span>Personal corrections</span>
-        </div>
-        <div>
-          <strong>Beginner-safe</strong>
-          <span>Clear modifications</span>
+          <button class="min-h-12 rounded-full bg-paper px-6 font-extrabold text-forest transition hover:-translate-y-0.5" type="button" data-open-booking>Plan my first class</button>
         </div>
       </section>
 
-      <section class="section practice-section" id="practice">
-        <div class="section-intro">
-          <p class="eyebrow">Choose your rhythm</p>
-          <h2>Practice paths that build steadily.</h2>
-          <p>
-            Ashtanga can be intense, but it does not need to be intimidating. Adya Yoga keeps
-            the method disciplined, warm, and intelligently paced.
-          </p>
+      <section class="px-5 py-20 md:px-10 md:py-28 lg:px-14" id="faq">
+        <div class="max-w-2xl">
+          <p class="mb-3 text-xs font-black uppercase text-clay">Questions</p>
+          <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">Before you arrive.</h2>
         </div>
-        <div class="practice-grid">
-          <article class="practice-card">
-            <span>01</span>
-            <h3>Foundations</h3>
-            <p>Breath, sun salutations, standing postures, and safe transitions for new students.</p>
-            <button type="button" data-book-class="Ashtanga Foundations">Start here</button>
-          </article>
-          <article class="practice-card featured">
-            <span>02</span>
-            <h3>Led Ashtanga</h3>
-            <p>A structured primary-series practice with count, rhythm, and hands-on guidance.</p>
-            <button type="button" data-book-class="Led Ashtanga">Join a class</button>
-          </article>
-          <article class="practice-card">
-            <span>03</span>
-            <h3>Private Sessions</h3>
-            <p>One-to-one plans for injuries, confidence, home practice, or deeper progression.</p>
-            <button type="button" data-book-class="Private Session">Request slot</button>
-          </article>
-        </div>
-      </section>
-
-      <section class="teacher-section" id="teacher">
-        <div class="teacher-image" role="img" aria-label="Yoga mat and calm studio space"></div>
-        <div class="teacher-copy">
-          <p class="eyebrow">Teacher</p>
-          <h2>Vaishnavi Simha</h2>
-          <p>
-            Vaishnavi teaches Ashtanga yoga with a focus on breath, alignment, and consistency.
-            Her certification from Rishikesh anchors the practice in traditional study while her
-            classes stay clear, approachable, and responsive to real bodies.
-          </p>
-          <div class="quote-box">
-            <p>
-              "The aim is not to force a posture. The aim is to return to attention, one breath
-              at a time."
-            </p>
-          </div>
-          <ul class="teacher-list">
-            <li>Certified yoga teacher from Rishikesh</li>
-            <li>Ashtanga-led classes with mindful modifications</li>
-            <li>Private coaching for beginners and returning practitioners</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section schedule-section" id="schedule">
-        <div class="section-intro compact">
-          <p class="eyebrow">Weekly schedule</p>
-          <h2>Find the class that fits today.</h2>
-        </div>
-        <div class="filters" role="tablist" aria-label="Class filters">
-          <button class="filter active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="filter" type="button" data-filter="beginner" role="tab" aria-selected="false">Beginner</button>
-          <button class="filter" type="button" data-filter="ashtanga" role="tab" aria-selected="false">Ashtanga</button>
-          <button class="filter" type="button" data-filter="private" role="tab" aria-selected="false">Private</button>
-        </div>
-        <div class="schedule-list" data-schedule-list>
-          <article class="class-row" data-tags="ashtanga">
-            <time>Mon - 6:30 AM</time>
-            <div>
-              <h3>Morning Led Ashtanga</h3>
-              <p>75 min - steady primary-series rhythm</p>
-            </div>
-            <button type="button" data-book-class="Morning Led Ashtanga">Book</button>
-          </article>
-          <article class="class-row" data-tags="beginner ashtanga">
-            <time>Wed - 7:00 PM</time>
-            <div>
-              <h3>Ashtanga Foundations</h3>
-              <p>60 min - breath, basics, and modifications</p>
-            </div>
-            <button type="button" data-book-class="Ashtanga Foundations">Book</button>
-          </article>
-          <article class="class-row" data-tags="ashtanga">
-            <time>Fri - 6:30 AM</time>
-            <div>
-              <h3>Mysore-Style Guided Practice</h3>
-              <p>90 min - individual pace with teacher support</p>
-            </div>
-            <button type="button" data-book-class="Mysore-Style Guided Practice">Book</button>
-          </article>
-          <article class="class-row" data-tags="private beginner">
-            <time>Sat - by request</time>
-            <div>
-              <h3>Private Yoga Session</h3>
-              <p>60 min - personalized practice plan</p>
-            </div>
-            <button type="button" data-book-class="Private Yoga Session">Request</button>
-          </article>
-        </div>
-      </section>
-
-      <section class="cta-band">
-        <div>
-          <p class="eyebrow">Begin with one class</p>
-          <h2>Come for the sequence. Stay for the steadiness.</h2>
-        </div>
-        <button class="primary-action dark" type="button" data-open-booking>Plan my first class</button>
-      </section>
-
-      <section class="section faq-section" id="faq">
-        <div class="section-intro compact">
-          <p class="eyebrow">Questions</p>
-          <h2>Before you arrive.</h2>
-        </div>
-        <div class="faq-list">
-          <details>
-            <summary>Do I need experience with Ashtanga?</summary>
-            <p>No. Foundations classes are designed for new students and include modifications.</p>
-          </details>
-          <details>
-            <summary>What should I bring?</summary>
-            <p>A mat, water, and comfortable clothing. Practice is best done on a light stomach.</p>
-          </details>
-          <details>
-            <summary>Can I book private sessions?</summary>
-            <p>Yes. Private sessions can be arranged for beginners, injury-aware practice, and home routines.</p>
-          </details>
+        <div class="mt-10 grid gap-3">
+          <details class="rounded-lg border border-forest/15 bg-paper"><summary class="cursor-pointer px-6 py-5 font-extrabold text-forest">Do I need experience with Ashtanga?</summary><p class="px-6 pb-5 leading-7 text-ink/62">No. Foundations classes are designed for new students and include modifications.</p></details>
+          <details class="rounded-lg border border-forest/15 bg-paper"><summary class="cursor-pointer px-6 py-5 font-extrabold text-forest">What should I bring?</summary><p class="px-6 pb-5 leading-7 text-ink/62">A mat, water, and comfortable clothing. Practice is best done on a light stomach.</p></details>
+          <details class="rounded-lg border border-forest/15 bg-paper"><summary class="cursor-pointer px-6 py-5 font-extrabold text-forest">Can I book private sessions?</summary><p class="px-6 pb-5 leading-7 text-ink/62">Yes. Private sessions can be arranged for beginners, injury-aware practice, and home routines.</p></details>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="flex flex-col gap-6 bg-[#112720] px-5 py-10 text-paper md:flex-row md:items-end md:justify-between md:px-10 lg:px-14">
       <div>
-        <a class="brand footer-brand" href="#top">
-          <span class="brand-mark">A</span>
-          <span>Adya Yoga</span>
-        </a>
-        <p>Ashtanga yoga with Vaishnavi Simha.</p>
+        <a class="flex items-center gap-3 font-extrabold" href="#top"><span class="grid size-9 place-items-center rounded-full border border-current font-display text-lg">A</span><span>Adya Yoga</span></a>
+        <p class="mt-3 text-paper/68">Ashtanga yoga with Vaishnavi Simha.</p>
       </div>
-      <div class="footer-actions">
-        <a href="mailto:hello@adyayoga.in">hello@adyayoga.in</a>
-        <a href="https://wa.me/910000000000?text=Namaste%20Vaishnavi%2C%20I%20would%20like%20to%20book%20an%20Adya%20Yoga%20class." target="_blank" rel="noreferrer">WhatsApp</a>
+      <div class="flex flex-wrap gap-4 font-bold">
+        <a class="border-b border-paper/40" href="mailto:info@kalaaadyayoga.com">info@kalaaadyayoga.com</a>
+        <a class="border-b border-paper/40" href="#" target="_blank" rel="noreferrer" data-whatsapp-link data-whatsapp-source="footer">WhatsApp</a>
       </div>
     </footer>
 
-    <div class="booking-backdrop" data-booking-backdrop hidden></div>
-    <aside class="booking-drawer" data-booking-drawer aria-hidden="true" aria-label="Class booking panel">
-      <div class="drawer-header">
+    <div class="booking-backdrop fixed inset-0 z-50 hidden bg-ink/50" data-booking-backdrop hidden></div>
+    <aside class="booking-drawer fixed right-0 top-0 z-[60] flex h-screen w-full max-w-[460px] translate-x-full flex-col gap-5 bg-paper p-6 shadow-soft transition duration-200 md:p-7" data-booking-drawer aria-hidden="true" aria-label="Class booking panel">
+      <div class="flex items-start justify-between gap-5">
         <div>
-          <p class="eyebrow">Booking request</p>
-          <h2 data-selected-class>Adya Yoga class</h2>
+          <p class="mb-2 text-xs font-black uppercase text-clay">Booking request</p>
+          <h2 class="font-display text-4xl leading-tight text-forest" data-selected-class>Adya Yoga class</h2>
         </div>
-        <button class="icon-button" type="button" aria-label="Close booking panel" data-close-booking>x</button>
+        <button class="grid size-11 place-items-center rounded-full border border-forest/15 text-xl text-forest" type="button" aria-label="Close booking panel" data-close-booking>x</button>
       </div>
-      <form class="booking-form" data-booking-form>
-        <label>
-          Name
-          <input name="name" type="text" placeholder="Your name" required />
-        </label>
-        <label>
-          Phone or email
-          <input name="contact" type="text" placeholder="Where Vaishnavi can reach you" required />
-        </label>
-        <label>
-          Practice level
-          <select name="level">
-            <option>New to yoga</option>
-            <option>Some yoga experience</option>
-            <option>Regular Ashtanga practitioner</option>
-          </select>
-        </label>
-        <label>
-          Note
-          <textarea name="note" rows="4" placeholder="Share injuries, goals, or preferred timing"></textarea>
-        </label>
-        <button class="primary-action full" type="submit">Send request</button>
-        <p class="form-status" data-form-status role="status"></p>
+      <form class="grid gap-4" action="https://api.web3forms.com/submit" method="POST" target="_blank" data-booking-form>
+        <input type="hidden" name="access_key" value="4c6751c5-2cae-4461-af13-a596823ad59f" />
+        <input type="hidden" name="subject" value="New Adya Yoga booking request" />
+        <input type="hidden" name="from_name" value="Adya Yoga Website" />
+        <input type="hidden" name="selected_class" value="Adya Yoga class" data-selected-class-input />
+        <label class="grid gap-2 font-extrabold text-forest">Name<input class="rounded-lg border border-forest/15 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="name" type="text" placeholder="Your name" required /></label>
+        <label class="grid gap-2 font-extrabold text-forest">Phone or email<input class="rounded-lg border border-forest/15 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="contact" type="text" placeholder="Where Vaishnavi can reach you" required /></label>
+        <label class="grid gap-2 font-extrabold text-forest">Practice level<select class="rounded-lg border border-forest/15 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="level"><option>New to yoga</option><option>Some yoga experience</option><option>Regular Ashtanga practitioner</option></select></label>
+        <label class="grid gap-2 font-extrabold text-forest">Note<textarea class="rounded-lg border border-forest/15 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="note" rows="4" placeholder="Share injuries, goals, or preferred timing"></textarea></label>
+        <button class="min-h-12 rounded-lg bg-amber px-5 font-extrabold text-ink transition hover:-translate-y-0.5" type="button" data-whatsapp-submit>Send on WhatsApp</button>
+        <button class="min-h-11 rounded-lg border border-forest/20 px-5 font-extrabold text-forest transition hover:-translate-y-0.5" type="submit" data-web3forms-submit>Send form instead</button>
+        <p class="min-h-6 font-bold text-sage" data-form-status role="status"></p>
       </form>
-      <a class="whatsapp-link" href="https://wa.me/910000000000?text=Namaste%20Vaishnavi%2C%20I%20would%20like%20to%20book%20an%20Adya%20Yoga%20class." target="_blank" rel="noreferrer">
-        Continue on WhatsApp
-      </a>
+      <a class="inline-flex justify-center rounded-lg border border-forest px-5 py-3 font-extrabold text-forest" href="#" target="_blank" rel="noreferrer" data-whatsapp-link data-whatsapp-source="drawer">Continue on WhatsApp</a>
     </aside>
 
-    <script src="script.js"></script>
+    <script src="site.js"></script>
   </body>
 </html>
