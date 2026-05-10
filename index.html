@@ -106,30 +106,30 @@
           <p class="mt-6 text-lg leading-8 text-ink/62">Vaishnavi blends Ashtanga Vinyasa, Hatha Vinyasa, Pranayama, and meditative awareness within her classes. The emphasis shifts with the batch and student needs, but the practice stays rooted in alignment, breath, and steady progression.</p>
         </div>
 
-        <div class="mt-12 grid gap-4 lg:grid-cols-3">
-          <article class="rounded-lg border border-forest/15 bg-paper p-7 shadow-[0_18px_50px_rgba(24,54,45,0.08)] transition hover:-translate-y-1">
+        <div class="practice-grid mt-12 grid gap-4 lg:grid-cols-3">
+          <article class="practice-card group rounded-lg border border-forest/15 bg-paper p-7 shadow-[0_18px_50px_rgba(24,54,45,0.08)] transition hover:-translate-y-1">
             <h3 class="mt-8 text-2xl font-extrabold text-forest">Ashtanga Vinyasa Yoga</h3>
             <p class="mt-4 leading-7 text-ink/62">The active, heat-building part of practice. It supports stamina, sweat, strength, and a more consistent fitness rhythm.</p>
-            <details class="mt-5 rounded-lg border border-forest/15 bg-ivory">
-              <summary class="cursor-pointer px-5 py-4 font-extrabold text-forest">Explore</summary>
-              <p class="px-5 pb-5 leading-7 text-ink/62">This does not mean a separate Ashtanga Vinyasa-only class. It is woven into the class when the practice calls for energy, movement, and a stronger flow.</p>
-            </details>
+            <button class="practice-toggle mt-5 rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5 md:hidden" type="button">Explore</button>
+            <div class="practice-reveal">
+              <p>This layer is woven in when the practice calls for energy, movement, stamina, and a stronger breath-led flow.</p>
+            </div>
           </article>
-          <article class="rounded-lg border border-forest/15 bg-paper p-7 shadow-[0_18px_50px_rgba(24,54,45,0.08)] transition hover:-translate-y-1">
+          <article class="practice-card group rounded-lg border border-forest/15 bg-paper p-7 shadow-[0_18px_50px_rgba(24,54,45,0.08)] transition hover:-translate-y-1">
             <h3 class="mt-8 text-2xl font-extrabold text-forest">Hatha Vinyasa Yoga</h3>
             <p class="mt-4 leading-7 text-ink/62">The alignment and focus layer of practice. It helps you strengthen muscles, understand postures, and move with the breath.</p>
-            <details class="mt-5 rounded-lg border border-forest/15 bg-ivory">
-              <summary class="cursor-pointer px-5 py-4 font-extrabold text-forest">Explore</summary>
-              <p class="px-5 pb-5 leading-7 text-ink/62">This is included as careful posture work, alignment cues, steadier holds, and mindful transitions inside the regular class structure.</p>
-            </details>
+            <button class="practice-toggle mt-5 rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5 md:hidden" type="button">Explore</button>
+            <div class="practice-reveal">
+              <p>This is included as careful posture work, alignment cues, steadier holds, and mindful transitions inside the regular class structure.</p>
+            </div>
           </article>
-          <article class="rounded-lg border border-forest/15 bg-paper p-7 shadow-[0_18px_50px_rgba(24,54,45,0.08)] transition hover:-translate-y-1">
+          <article class="practice-card group rounded-lg border border-forest/15 bg-paper p-7 shadow-[0_18px_50px_rgba(24,54,45,0.08)] transition hover:-translate-y-1">
             <h3 class="mt-8 text-2xl font-extrabold text-forest">Pranayama & Meditation</h3>
             <p class="mt-4 leading-7 text-ink/62">The breath and stillness layer of practice. It helps you breathe better, calm the system, and build inner steadiness.</p>
-            <details class="mt-5 rounded-lg border border-forest/15 bg-ivory">
-              <summary class="cursor-pointer px-5 py-4 font-extrabold text-forest">Explore</summary>
-              <p class="px-5 pb-5 leading-7 text-ink/62">Breath-work and meditative awareness are added to support the class, especially when students need calm, clarity, and a deeper connection to the practice.</p>
-            </details>
+            <button class="practice-toggle mt-5 rounded-full bg-forest px-5 py-3 font-extrabold text-paper transition hover:-translate-y-0.5 md:hidden" type="button">Explore</button>
+            <div class="practice-reveal">
+              <p>Breath-work and meditative awareness are added to support the class, especially when students need calm, clarity, and a deeper connection to the practice.</p>
+            </div>
           </article>
         </div>
       </section>
@@ -143,10 +143,15 @@
           <div class="my-8 border-y border-forest/15 py-6">
             <p class="font-display text-3xl leading-tight text-forest">"The aim is not to force a posture. The aim is to return to attention, one breath at a time."</p>
           </div>
-          <div class="grid gap-3 text-sm font-bold text-forest sm:grid-cols-3">
-            <div class="rounded-lg border border-forest/15 bg-paper/70 p-4">Certified from Rishikesh (RYTTC)</div>
-            <div class="rounded-lg border border-forest/15 bg-paper/70 p-4">Traditional Yoga</div>
-            <div class="rounded-lg border border-forest/15 bg-paper/70 p-4">Private coaching</div>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm font-extrabold text-forest">
+            <span>Certified from Rishikesh (RYTTC)</span>
+            <span class="text-forest/35">/</span>
+            <span>Traditional forms of Yoga</span>
+          </div>
+          <div class="mt-5 grid gap-3 text-center text-sm font-black text-forest sm:grid-cols-3">
+            <div class="rounded-lg border border-sage/25 bg-sage/15 p-4">Women-Only Sessions</div>
+            <div class="rounded-lg border border-amber/35 bg-amber/20 p-4">Group Sessions</div>
+            <div class="rounded-lg border border-clay/20 bg-clay/10 p-4">Private coaching</div>
           </div>
         </div>
       </section>
@@ -181,7 +186,7 @@
             <p class="mb-3 text-xs font-black uppercase text-amber">Begin with one class</p>
             <h2 class="font-display text-5xl leading-tight md:text-7xl">Come for the sequence. Stay for the steadiness.</h2>
           </div>
-          <button class="min-h-12 rounded-full bg-paper px-6 font-extrabold text-forest transition hover:-translate-y-0.5" type="button" data-open-booking>Plan my first class</button>
+          <button class="inline-flex min-h-12 items-center justify-center rounded-full bg-amber px-7 py-3 font-extrabold text-ink shadow-[0_16px_40px_rgba(208,168,90,0.24)] transition hover:-translate-y-0.5 hover:bg-[#e0bc70]" type="button" data-open-booking>Plan my first class</button>
         </div>
       </section>
 

@@ -44,6 +44,53 @@
   display: none;
 }
 
+.schedule-tag-online {
+  border-color: rgba(111, 128, 100, 0.35);
+  background: rgba(111, 128, 100, 0.16);
+  color: #18362d;
+}
+
+.schedule-tag-offline {
+  border-color: rgba(208, 168, 90, 0.45);
+  background: rgba(208, 168, 90, 0.22);
+  color: #5f4816;
+}
+
+.practice-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.practice-reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin-top: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: grid-template-rows 240ms ease, opacity 200ms ease, transform 220ms ease, margin-top 220ms ease;
+}
+
+.practice-reveal p {
+  min-height: 0;
+  overflow: hidden;
+  color: rgba(23, 33, 29, 0.68);
+  line-height: 1.7;
+}
+
+.practice-card:hover .practice-reveal,
+.practice-card:focus-within .practice-reveal,
+.practice-card.expanded .practice-reveal {
+  grid-template-rows: 1fr;
+  margin-top: 18px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.practice-card.expanded .practice-toggle {
+  background: #d0a85a;
+  color: #17211d;
+}
+
 .booking-backdrop:not([hidden]) {
   display: block;
 }
