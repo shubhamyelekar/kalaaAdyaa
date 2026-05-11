@@ -192,7 +192,7 @@ whatsappSubmit.addEventListener("click", () => {
 
 bookingForm.addEventListener("submit", () => {
   selectedClassInput.value = selectedClass.textContent;
-  formStatus.textContent = "Sending form request in a new tab.";
+  formStatus.textContent = "Sending your request.";
 });
 
 bookingForm.addEventListener("input", updateContactLinks);
