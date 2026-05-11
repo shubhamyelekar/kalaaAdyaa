@@ -72,7 +72,7 @@ const renderSchedule = () => {
   });
 
   scheduleList.innerHTML = visibleSchedule.map((item) => {
-    const modeLabel = item.mode.charAt(0).toUpperCase() + item.mode.slice(1);
+    const modeLabel = item.mode === "offline" ? "In Person" : "Online";
     const modeTagClass = item.mode === "offline"
       ? "bg-amber/20 text-[#6f5218] border-amber/35"
       : "bg-sage/15 text-forest border-sage/30";

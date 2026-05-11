@@ -8,7 +8,22 @@
 .teacher-image {
   background:
     linear-gradient(0deg, rgba(24, 54, 45, 0.08), rgba(24, 54, 45, 0.08)),
-    url("https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1300&q=82") center / cover;
+    url("assets/vaishnavi-rishikesh-ganga-realistic.png") center / cover;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(208, 168, 90, 0.1), transparent 26%),
+    radial-gradient(circle at 88% 18%, rgba(111, 128, 100, 0.12), transparent 24%),
+    repeating-linear-gradient(135deg, rgba(24, 54, 45, 0.026) 0 1px, transparent 1px 16px),
+    #fbf7ee;
+}
+
+main {
+  background:
+    linear-gradient(rgba(251, 247, 238, 0.72), rgba(251, 247, 238, 0.72)),
+    radial-gradient(circle at 22% 34%, rgba(183, 95, 63, 0.08), transparent 22%),
+    radial-gradient(circle at 78% 62%, rgba(111, 128, 100, 0.1), transparent 26%);
 }
 
 [data-header].scrolled,
@@ -44,16 +59,63 @@
   display: none;
 }
 
+.practice-section,
+.ganga-texture-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(208, 168, 90, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 22%, rgba(72, 128, 126, 0.2), transparent 24%),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.94), rgba(226, 238, 230, 0.82)),
+    repeating-linear-gradient(45deg, rgba(24, 54, 45, 0.026) 0 1px, transparent 1px 14px);
+}
+
+.practice-section::before,
+.ganga-texture-section::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 18%, rgba(82, 139, 145, 0.14) 18% 19%, transparent 19% 32%, rgba(82, 139, 145, 0.1) 32% 33%, transparent 33% 100%),
+    repeating-radial-gradient(ellipse at 18% 80%, rgba(255, 255, 255, 0.28) 0 1px, transparent 1px 18px);
+  content: "";
+  opacity: 0.75;
+  transform: rotate(-1deg) scale(1.04);
+}
+
+.practice-section::after,
+.ganga-texture-section::after {
+  position: absolute;
+  right: -12%;
+  top: 8%;
+  width: 54%;
+  height: 82%;
+  pointer-events: none;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(168deg, rgba(69, 128, 133, 0.16) 0 2px, transparent 2px 18px),
+    radial-gradient(circle, rgba(255, 253, 248, 0.38), transparent 62%);
+  content: "";
+  filter: blur(0.2px);
+  opacity: 0.6;
+}
+
+.practice-section > *,
+.ganga-texture-section > * {
+  position: relative;
+  z-index: 1;
+}
+
 .schedule-tag-online {
-  border-color: rgba(111, 128, 100, 0.35);
-  background: rgba(111, 128, 100, 0.16);
-  color: #18362d;
+  border-color: rgba(86, 134, 111, 0.34);
+  background: #e4f1e9;
+  color: #245744;
 }
 
 .schedule-tag-offline {
-  border-color: rgba(208, 168, 90, 0.45);
-  background: rgba(208, 168, 90, 0.22);
-  color: #5f4816;
+  border-color: rgba(213, 139, 55, 0.45);
+  background: #ffe0a8;
+  color: #6f3b12;
 }
 
 .practice-card {
@@ -62,17 +124,16 @@
 }
 
 .practice-reveal {
-  display: grid;
-  grid-template-rows: 0fr;
+  max-height: 0;
   margin-top: 0;
+  overflow: hidden;
   opacity: 0;
   transform: translateY(8px);
-  transition: grid-template-rows 240ms ease, opacity 200ms ease, transform 220ms ease, margin-top 220ms ease;
+  transition: max-height 320ms ease, opacity 220ms ease, transform 260ms ease, margin-top 240ms ease;
+  will-change: max-height, opacity, transform;
 }
 
 .practice-reveal p {
-  min-height: 0;
-  overflow: hidden;
   color: rgba(23, 33, 29, 0.68);
   line-height: 1.7;
 }
@@ -80,7 +141,7 @@
 .practice-card:hover .practice-reveal,
 .practice-card:focus-within .practice-reveal,
 .practice-card.expanded .practice-reveal {
-  grid-template-rows: 1fr;
+  max-height: 220px;
   margin-top: 18px;
   opacity: 1;
   transform: translateY(0);

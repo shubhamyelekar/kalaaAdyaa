@@ -1,0 +1,12 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Adya Yoga logo</title>
+  <desc id="desc">A clean circular yoga logo with a lotus and flowing river line.</desc>
+  <circle cx="80" cy="80" r="72" fill="#FBF7EE"/>
+  <circle cx="80" cy="80" r="70" stroke="#18362D" stroke-width="4"/>
+  <path d="M80 40C89.8 53.2 90.4 66.1 80 78C69.6 66.1 70.2 53.2 80 40Z" fill="#D0A85A"/>
+  <path d="M55 57C70.6 60.5 79.3 69.2 80 83C65.7 82.8 56.9 74.4 55 57Z" fill="#6F8064"/>
+  <path d="M105 57C89.4 60.5 80.7 69.2 80 83C94.3 82.8 103.1 74.4 105 57Z" fill="#6F8064"/>
+  <path d="M48 91C61.6 83.1 72.2 83.5 80 94C87.8 83.5 98.4 83.1 112 91C101.2 103.2 90.6 105.1 80 96C69.4 105.1 58.8 103.2 48 91Z" fill="#B75F3F"/>
+  <path d="M46 112C57.2 106.7 68.6 106.7 80 112C91.4 117.3 102.8 117.3 114 112" stroke="#18362D" stroke-width="5" stroke-linecap="round"/>
+  <path d="M56 124C64 120.4 72 120.4 80 124C88 127.6 96 127.6 104 124" stroke="#6F8064" stroke-width="4" stroke-linecap="round"/>
+</svg>

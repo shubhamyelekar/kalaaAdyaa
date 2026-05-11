@@ -41,7 +41,7 @@
   <body class="bg-ivory font-body text-ink antialiased">
     <header class="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-5 py-4 text-paper transition duration-200 md:px-10 lg:px-14" data-header>
       <a class="flex items-center gap-3 font-extrabold" href="#top" aria-label="Adya Yoga home">
-        <span class="grid size-9 place-items-center rounded-full border border-current font-display text-lg">A</span>
+        <img class="size-10 rounded-full bg-paper" src="assets/adya-yoga-logo.svg" alt="" />
         <span>Adya Yoga</span>
       </a>
       <button class="grid size-11 place-items-center rounded-full border border-current md:hidden" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
@@ -71,7 +71,7 @@
                 careful alignment, and a steady path for beginners and committed practitioners.
               </p>
               <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                <button class="inline-flex min-h-12 items-center justify-center rounded-full bg-amber px-6 font-extrabold text-ink transition hover:-translate-y-0.5" type="button" data-open-booking>Reserve a class</button>
+                <button class="inline-flex min-h-12 items-center justify-center rounded-full bg-amber px-6 font-extrabold text-ink transition hover:-translate-y-0.5" type="button" data-open-booking>Book a class</button>
                 <a class="inline-flex min-h-12 items-center justify-center rounded-full border border-paper/60 px-6 font-extrabold text-paper transition hover:-translate-y-0.5" href="#schedule">View weekly schedule</a>
               </div>
             </div>
@@ -94,12 +94,12 @@
       </section>
 
       <section class="grid border-b border-forest/15 bg-paper md:grid-cols-3">
-        <div class="border-b border-forest/15 p-6 md:border-b-0 md:border-r lg:p-8"><strong class="block text-lg text-forest">Certified Teacher</strong><span class="mt-2 block text-sm leading-6 text-ink/62">Certified from Rishikesh (RYTTC).</span></div>
-        <div class="border-b border-forest/15 p-6 md:border-b-0 md:border-r lg:p-8"><strong class="block text-lg text-forest">Small Batches</strong><span class="mt-2 block text-sm leading-6 text-ink/62">Enough attention for thoughtful corrections.</span></div>
-        <div class="p-6 lg:p-8"><strong class="block text-lg text-forest">Beginner-Safe</strong><span class="mt-2 block text-sm leading-6 text-ink/62">Clear modifications without diluting the method.</span></div>
+        <div class="border-b border-forest/15 p-6 md:border-b-0 md:border-r lg:p-8"><strong class="block text-xl text-forest">Certified Teacher</strong><span class="mt-2 block text-[0.97rem] leading-7 text-ink/62">Certified from Rishikesh (RYTTC).</span></div>
+        <div class="border-b border-forest/15 p-6 md:border-b-0 md:border-r lg:p-8"><strong class="block text-xl text-forest">Small Batches</strong><span class="mt-2 block text-[0.97rem] leading-7 text-ink/62">Enough attention for thoughtful corrections.</span></div>
+        <div class="p-6 lg:p-8"><strong class="block text-xl text-forest">Beginner-Safe</strong><span class="mt-2 block text-[0.97rem] leading-7 text-ink/62">Clear modifications without diluting the method.</span></div>
       </section>
 
-      <section class="px-5 py-20 md:px-10 md:py-28 lg:px-14" id="practice">
+      <section class="practice-section px-5 py-20 md:px-10 md:py-28 lg:px-14" id="practice">
         <div class="max-w-3xl">
           <p class="mb-3 text-xs font-black uppercase text-clay">Choose your rhythm</p>
           <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">Every class carries strength, breath, and stillness.</h2>
@@ -148,15 +148,15 @@
             <span class="text-forest/35">/</span>
             <span>Traditional forms of Yoga</span>
           </div>
-          <div class="mt-5 grid gap-3 text-center text-sm font-black text-forest sm:grid-cols-3">
-            <div class="rounded-lg border border-sage/25 bg-sage/15 p-4">Women-Only Sessions</div>
-            <div class="rounded-lg border border-amber/35 bg-amber/20 p-4">Group Sessions</div>
-            <div class="rounded-lg border border-clay/20 bg-clay/10 p-4">Private coaching</div>
+          <div class="mt-5 grid gap-3 text-center text-sm font-black text-ink sm:grid-cols-3">
+            <div class="rounded-lg border border-amber/45 bg-amber/25 p-4">Women-Only Sessions</div>
+            <div class="rounded-lg border border-amber/45 bg-amber/25 p-4">Group Sessions</div>
+            <div class="rounded-lg border border-amber/45 bg-amber/25 p-4">Private coaching</div>
           </div>
         </div>
       </section>
 
-      <section class="bg-paper px-5 py-20 md:px-10 md:py-28 lg:px-14" id="schedule">
+      <section class="ganga-texture-section px-5 py-20 md:px-10 md:py-28 lg:px-14" id="schedule">
         <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div class="max-w-2xl">
             <p class="mb-3 text-xs font-black uppercase text-clay">Weekly schedule</p>
@@ -190,7 +190,7 @@
         </div>
       </section>
 
-      <section class="px-5 py-20 md:px-10 md:py-28 lg:px-14" id="faq">
+      <section class="ganga-texture-section px-5 py-20 md:px-10 md:py-28 lg:px-14" id="faq">
         <div class="max-w-2xl">
           <p class="mb-3 text-xs font-black uppercase text-clay">Questions</p>
           <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">Before you arrive.</h2>
@@ -205,7 +205,7 @@
 
     <footer class="flex flex-col gap-6 bg-[#112720] px-5 py-10 text-paper md:flex-row md:items-end md:justify-between md:px-10 lg:px-14">
       <div>
-        <a class="flex items-center gap-3 font-extrabold" href="#top"><span class="grid size-9 place-items-center rounded-full border border-current font-display text-lg">A</span><span>Adya Yoga</span></a>
+        <a class="flex items-center gap-3 font-extrabold" href="#top"><img class="size-10 rounded-full bg-paper" src="assets/adya-yoga-logo.svg" alt="" /><span>Adya Yoga</span></a>
         <p class="mt-3 text-paper/68">Traditional Yoga with Vaishnavi Simha.</p>
         <p class="mt-2 text-sm font-bold text-paper/70">Hatha Vinyasa / Ashtanga Vinyasa / Pranayama</p>
       </div>
