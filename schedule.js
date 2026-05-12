@@ -12,6 +12,18 @@ window.ADYA_SCHEDULE = [
     description: "Traditional Yoga group practice with in-person guidance.",
   },
   {
+    id: "morning-online-eight",
+    title: "Morning Group Class",
+    time: "8:00 AM - 9:00 AM",
+    startHour: 8,
+    duration: "60 mins",
+    period: "morning",
+    mode: "online",
+    format: "Group class",
+    location: "Online",
+    description: "A morning online group class for steady breath-led practice.",
+  },
+  {
     id: "morning-online-women",
     title: "Women's Only Group Class",
     time: "10:00 AM - 11:00 AM",
