@@ -15,4 +15,8 @@ window.ADYA_TESTIMONIALS = [
     name: "Ritika Sharma",
     text: "The online batch fits beautifully into my morning routine. Vaishnavi pays attention even in a group class, and the practice feels personal.",
   },
+  {
+    name: "Channesh",
+    text: "I would highly recommend these classes to others because the sessions are very personalized, motivating, and effective. Vaishnavi creates a very comfortable and positive environment that helps you stay consistent and push beyond your limits. The classes not only improve physical fitness, flexibility, and posture, but also help mentally by reducing stress and increasing confidence and energy levels. It has been a truly positive and transformative experience for me.",
+  },
 ];
