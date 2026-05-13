@@ -120,36 +120,7 @@ main {
 
 .practice-card {
   position: relative;
-  overflow: hidden;
-}
-
-.practice-reveal {
-  max-height: 0;
-  margin-top: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: max-height 320ms ease, opacity 220ms ease, transform 260ms ease, margin-top 240ms ease;
-  will-change: max-height, opacity, transform;
-}
-
-.practice-reveal p {
-  color: rgba(23, 33, 29, 0.68);
-  line-height: 1.7;
-}
-
-.practice-card:hover .practice-reveal,
-.practice-card:focus-within .practice-reveal,
-.practice-card.expanded .practice-reveal {
-  max-height: 220px;
-  margin-top: 18px;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.practice-card.expanded .practice-toggle {
-  background: #d0a85a;
-  color: #17211d;
+  min-height: 330px;
 }
 
 .testimonial-card {
@@ -297,5 +268,9 @@ main {
 
   .testimonial-track .testimonial-card {
     flex-basis: min(82vw, 300px);
+  }
+
+  .practice-card {
+    min-height: 0;
   }
 }

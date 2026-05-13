@@ -15,7 +15,6 @@ const nextClassMeta = document.querySelector("[data-next-class-meta]");
 const nextClassLocation = document.querySelector("[data-next-class-location]");
 const nextClassButton = document.querySelector("[data-book-next-class]");
 const whatsappLinks = document.querySelectorAll("[data-whatsapp-link]");
-const practiceCards = document.querySelectorAll(".practice-card");
 const testimonialList = document.querySelector("[data-testimonial-list]");
 const whatsappNumber = "919611840159";
 const schedule = window.ADYA_SCHEDULE || [];
@@ -195,18 +194,6 @@ updateNextClass();
 renderSchedule();
 renderTestimonials();
 updateContactLinks();
-
-practiceCards.forEach((card) => {
-  const toggle = card.querySelector(".practice-toggle");
-  if (!toggle) return;
-
-  toggle.addEventListener("click", () => {
-    practiceCards.forEach((item) => {
-      if (item !== card) item.classList.remove("expanded");
-    });
-    card.classList.toggle("expanded");
-  });
-});
 
 if (navToggle && nav && header) {
   navToggle.addEventListener("click", () => {
