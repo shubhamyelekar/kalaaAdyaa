@@ -152,6 +152,22 @@ main {
   color: #17211d;
 }
 
+.file-input::file-selector-button {
+  margin-right: 14px;
+  border: 0;
+  border-radius: 999px;
+  background: #18362d;
+  color: #fffdf8;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.file-input::file-selector-button:hover {
+  background: #385248;
+}
+
 .booking-backdrop:not([hidden]) {
   display: block;
 }

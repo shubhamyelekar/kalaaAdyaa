@@ -56,6 +56,7 @@
         <a class="opacity-90 transition hover:opacity-100" href="#practice">Practice</a>
         <a class="opacity-90 transition hover:opacity-100" href="#teacher">Teacher</a>
         <a class="opacity-90 transition hover:opacity-100" href="#schedule">Schedule</a>
+        <a class="opacity-90 transition hover:opacity-100" href="#testimonials">Stories</a>
         <a class="opacity-90 transition hover:opacity-100" href="#faq">FAQ</a>
         <button class="rounded-full bg-paper px-5 py-3 font-extrabold text-forest transition hover:-translate-y-0.5" type="button" data-open-booking>Book a class</button>
       </nav>
@@ -191,6 +192,47 @@
             <h2 class="font-display text-5xl leading-tight md:text-7xl">Come for the sequence. Stay for the steadiness.</h2>
           </div>
           <button class="inline-flex min-h-12 items-center justify-center rounded-full bg-amber px-7 py-3 font-extrabold text-ink shadow-[0_16px_40px_rgba(208,168,90,0.24)] transition hover:-translate-y-0.5 hover:bg-[#e0bc70]" type="button" data-open-booking>Plan my first class</button>
+        </div>
+      </section>
+
+      <section class="px-5 py-20 md:px-10 md:py-28 lg:px-14" id="testimonials">
+        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p class="mb-3 text-xs font-black uppercase text-clay">Student stories</p>
+            <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">Share what the practice changed for you.</h2>
+            <p class="mt-6 text-lg leading-8 text-ink/62">Students can leave a note about their experience with Adya Yoga. A photo is optional, but welcome if they want their story to feel more personal.</p>
+            <div class="mt-8 rounded-lg border border-forest/15 bg-paper p-5">
+              <p class="font-extrabold text-forest">What can students write about?</p>
+              <p class="mt-2 leading-7 text-ink/62">The class atmosphere, breath-work, consistency, beginner comfort, strength, mobility, or how Vaishnavi's guidance supported their practice.</p>
+            </div>
+          </div>
+
+          <form class="grid gap-4 rounded-lg border border-forest/15 bg-paper p-6 shadow-[0_18px_50px_rgba(24,54,45,0.08)] md:p-8" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" data-testimonial-form>
+            <input type="hidden" name="access_key" value="4c6751c5-2cae-4461-af13-a596823ad59f" />
+            <input type="hidden" name="subject" value="New Adya Yoga testimonial" />
+            <input type="hidden" name="from_name" value="Adya Yoga Website" />
+            <input type="hidden" name="redirect" value="https://yogaadya.com/thank-you.html" />
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="grid gap-2 font-extrabold text-forest">Name<input class="rounded-lg border border-forest/15 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="name" type="text" placeholder="Your name" required /></label>
+              <label class="grid gap-2 font-extrabold text-forest">Email or phone<input class="rounded-lg border border-forest/15 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="contact" type="text" placeholder="For Vaishnavi only" required /></label>
+            </div>
+
+            <label class="grid gap-2 font-extrabold text-forest">Your testimonial<textarea class="min-h-36 rounded-lg border border-forest/15 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="testimonial" rows="6" placeholder="Write your experience with Adya Yoga" required></textarea></label>
+
+            <div class="grid gap-4 sm:grid-cols-[0.8fr_1.2fr]">
+              <label class="grid gap-2 font-extrabold text-forest">Practice type<select class="rounded-lg border border-forest/15 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="practice_type"><option>Group class</option><option>Women-only batch</option><option>Private coaching</option><option>Online class</option><option>In-person class</option></select></label>
+              <label class="grid gap-2 font-extrabold text-forest">Attach a picture <span class="text-sm font-semibold text-ink/56">Optional</span><input class="file-input rounded-lg border border-dashed border-forest/25 bg-ivory px-4 py-3 font-normal text-ink outline-none focus:border-clay" name="attachment" type="file" accept="image/png,image/jpeg,image/webp" /></label>
+            </div>
+
+            <label class="flex gap-3 rounded-lg border border-forest/15 bg-ivory p-4 text-sm font-semibold leading-6 text-ink/68">
+              <input class="mt-1 size-4 accent-forest" name="permission_to_publish" type="checkbox" required />
+              <span>I am comfortable with Adya Yoga using this testimonial on the website or social media. Vaishnavi can edit for length without changing the meaning.</span>
+            </label>
+
+            <button class="min-h-12 rounded-full bg-forest px-6 font-extrabold text-paper transition hover:-translate-y-0.5" type="submit">Submit testimonial</button>
+            <p class="text-sm font-semibold leading-6 text-ink/54">Picture upload is optional. Please use a clear JPG, PNG, or WebP image.</p>
+          </form>
         </div>
       </section>
 
