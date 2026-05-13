@@ -201,7 +201,7 @@ main {
   display: flex;
   width: max-content;
   gap: 18px;
-  animation: testimonial-scroll 92s linear infinite;
+  animation: testimonial-scroll 76s linear infinite;
 }
 
 .testimonial-track .testimonial-card {
