@@ -145,6 +145,13 @@ main {
   margin-left: auto;
   margin-right: auto;
   padding: 8px 20px 24px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.testimonial-marquee.is-dragging {
+  cursor: grabbing;
 }
 
 .testimonial-marquee::before,
@@ -172,7 +179,7 @@ main {
   display: flex;
   width: max-content;
   gap: 18px;
-  animation: testimonial-scroll 76s linear infinite;
+  will-change: transform;
 }
 
 .testimonial-track .testimonial-card {
@@ -191,31 +198,20 @@ main {
   overflow: visible;
 }
 
-.testimonial-marquee:hover .testimonial-track,
-.testimonial-marquee:focus-within .testimonial-track {
-  animation-play-state: paused;
-}
-
 [data-testimonial-layout="grid"] .testimonial-card {
   min-width: 0;
 }
 
-@keyframes testimonial-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(calc(-50% - 8px));
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
+  .testimonial-marquee {
+    overflow-x: auto;
+    cursor: auto;
+  }
+
   .testimonial-track {
     width: auto;
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
-    animation: none;
+    transform: none !important;
   }
 
   .testimonial-track .testimonial-card {

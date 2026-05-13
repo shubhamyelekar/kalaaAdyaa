@@ -163,6 +163,81 @@ const renderTestimonials = () => {
     : cardMarkup.join("");
 };
 
+const setupTestimonialMarquee = () => {
+  const track = document.querySelector("[data-testimonial-layout='marquee']");
+  const marquee = track?.closest(".testimonial-marquee");
+  if (!track || !marquee || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let offset = 0;
+  let lastFrame = performance.now();
+  let isPaused = false;
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartOffset = 0;
+  const speed = 18;
+
+  const getLoopWidth = () => track.scrollWidth / 2;
+  const normalizeOffset = (value) => {
+    const loopWidth = getLoopWidth();
+    if (!loopWidth) return 0;
+    let nextValue = value % loopWidth;
+    if (nextValue > 0) nextValue -= loopWidth;
+    return nextValue;
+  };
+
+  const setOffset = (value) => {
+    offset = normalizeOffset(value);
+    track.style.transform = `translate3d(${offset}px, 0, 0)`;
+  };
+
+  const animate = (time) => {
+    const delta = Math.min(time - lastFrame, 64);
+    lastFrame = time;
+    if (!isPaused && !isDragging) setOffset(offset - (speed * delta) / 1000);
+    window.requestAnimationFrame(animate);
+  };
+
+  marquee.addEventListener("pointerdown", (event) => {
+    isDragging = true;
+    dragStartX = event.clientX;
+    dragStartOffset = offset;
+    marquee.classList.add("is-dragging");
+    marquee.setPointerCapture(event.pointerId);
+  });
+
+  marquee.addEventListener("pointermove", (event) => {
+    if (!isDragging) return;
+    setOffset(dragStartOffset + event.clientX - dragStartX);
+  });
+
+  const stopDragging = (event) => {
+    if (!isDragging) return;
+    isDragging = false;
+    marquee.classList.remove("is-dragging");
+    if (marquee.hasPointerCapture(event.pointerId)) {
+      marquee.releasePointerCapture(event.pointerId);
+    }
+  };
+
+  marquee.addEventListener("pointerup", stopDragging);
+  marquee.addEventListener("pointercancel", stopDragging);
+  marquee.addEventListener("mouseenter", () => {
+    isPaused = true;
+  });
+  marquee.addEventListener("mouseleave", () => {
+    isPaused = false;
+  });
+  marquee.addEventListener("focusin", () => {
+    isPaused = true;
+  });
+  marquee.addEventListener("focusout", () => {
+    isPaused = false;
+  });
+
+  setOffset(0);
+  window.requestAnimationFrame(animate);
+};
+
 const setHeaderState = () => {
   if (!header) return;
   header.classList.toggle("scrolled", window.scrollY > 20);
@@ -193,6 +268,7 @@ setHeaderState();
 updateNextClass();
 renderSchedule();
 renderTestimonials();
+setupTestimonialMarquee();
 updateContactLinks();
 
 if (navToggle && nav && header) {
