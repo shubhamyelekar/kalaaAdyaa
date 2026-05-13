@@ -193,9 +193,10 @@ main {
 
 .teacher-link {
   display: block;
-  border-color: rgba(255, 231, 176, 0.74);
-  background: #f2c96f;
+  border-color: rgba(255, 253, 248, 0.78);
+  background: #ffd15e;
   color: #17211d;
+  box-shadow: 0 14px 30px rgba(9, 22, 18, 0.18);
   transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -207,6 +208,33 @@ main {
   box-shadow: 0 18px 38px rgba(208, 168, 90, 0.22);
   outline: none;
   transform: translateY(-2px);
+}
+
+.custom-time-card {
+  border-color: rgba(24, 54, 45, 0.2);
+  background: #18362d;
+  color: #fffdf8;
+}
+
+.custom-time-card h3 {
+  color: #fffdf8;
+}
+
+.custom-time-card p {
+  color: rgba(255, 253, 248, 0.72);
+}
+
+.custom-time-button {
+  border: 1px solid rgba(255, 253, 248, 0.22);
+  background: #fffdf8;
+  color: #18362d;
+}
+
+.custom-time-button:hover,
+.custom-time-button:focus-visible {
+  background: #ffd98a;
+  color: #17211d;
+  outline: none;
 }
 
 .contact-card {
@@ -282,13 +310,13 @@ main {
   display: grid;
   width: min(100%, 260px);
   gap: 6px;
-  border: 1px solid rgba(24, 54, 45, 0.16);
+  border: 1px solid rgba(24, 54, 45, 0.28);
   border-radius: 8px;
-  background: rgba(255, 253, 248, 0.72);
+  background: #18362d;
   padding: 18px;
-  color: #18362d;
-  box-shadow: 0 18px 44px rgba(24, 54, 45, 0.08);
-  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+  color: #fffdf8;
+  box-shadow: 0 18px 44px rgba(24, 54, 45, 0.14);
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .story-card span {
@@ -296,14 +324,15 @@ main {
 }
 
 .story-card small {
-  color: rgba(23, 33, 29, 0.58);
+  color: rgba(255, 253, 248, 0.68);
   font-weight: 700;
 }
 
 .story-card:hover,
 .story-card:focus-visible {
   border-color: rgba(208, 168, 90, 0.58);
-  background: #fffdf8;
+  background: #10251f;
+  color: #ffd98a;
   outline: none;
   transform: translateY(-2px);
 }
