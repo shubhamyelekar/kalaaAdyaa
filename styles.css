@@ -193,16 +193,18 @@ main {
 
 .teacher-link {
   display: block;
+  border-color: rgba(255, 231, 176, 0.74);
+  background: #f2c96f;
   color: #17211d;
   transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .teacher-link:hover,
 .teacher-link:focus-visible {
-  border-color: rgba(255, 253, 248, 0.38);
-  background: #e0bc70;
+  border-color: rgba(255, 253, 248, 0.82);
+  background: #ffd98a;
   color: #17211d;
-  box-shadow: 0 16px 34px rgba(9, 22, 18, 0.18);
+  box-shadow: 0 18px 38px rgba(208, 168, 90, 0.22);
   outline: none;
   transform: translateY(-2px);
 }
