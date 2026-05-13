@@ -154,8 +154,8 @@ main {
 
 .testimonial-card {
   display: flex;
-  min-width: min(76vw, 320px);
-  min-height: 260px;
+  min-width: min(72vw, 280px);
+  min-height: 236px;
   flex-direction: column;
 }
 
@@ -199,13 +199,12 @@ main {
 .testimonial-track {
   display: flex;
   width: max-content;
-  gap: 16px;
-  animation: testimonial-scroll 72s linear infinite;
+  gap: 14px;
+  animation: testimonial-scroll 80s linear infinite;
 }
 
 .testimonial-marquee:hover .testimonial-track,
-.testimonial-marquee:focus-within .testimonial-track,
-.testimonials-paused .testimonial-track {
+.testimonial-marquee:focus-within .testimonial-track {
   animation-play-state: paused;
 }
 
