@@ -118,6 +118,29 @@ main {
   color: #6f3b12;
 }
 
+.schedule-card {
+  scroll-margin-top: 96px;
+}
+
+.schedule-card:target {
+  background: rgba(208, 168, 90, 0.16);
+}
+
+.teacher-link {
+  display: block;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.teacher-link:hover,
+.teacher-link:focus-visible {
+  border-color: rgba(24, 54, 45, 0.28);
+  background: #d0a85a;
+  color: #17211d;
+  box-shadow: 0 14px 30px rgba(24, 54, 45, 0.12);
+  outline: none;
+  transform: translateY(-2px);
+}
+
 .practice-card {
   position: relative;
   min-height: 330px;

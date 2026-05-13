@@ -16,6 +16,7 @@ const nextClassLocation = document.querySelector("[data-next-class-location]");
 const nextClassButton = document.querySelector("[data-book-next-class]");
 const whatsappLinks = document.querySelectorAll("[data-whatsapp-link]");
 const testimonialList = document.querySelector("[data-testimonial-list]");
+const scheduleLinks = document.querySelectorAll("[data-schedule-link]");
 const whatsappNumber = "919611840159";
 const schedule = window.ADYA_SCHEDULE || [];
 const testimonials = window.ADYA_TESTIMONIALS || [];
@@ -97,7 +98,7 @@ const renderSchedule = () => {
       ? "bg-amber/20 text-[#6f5218] border-amber/35"
       : "bg-sage/15 text-forest border-sage/30";
     return `
-      <article class="class-row grid gap-4 py-6 md:grid-cols-[150px_minmax(0,1fr)_150px] md:items-center md:gap-5" data-tags="${item.period} ${item.mode}">
+      <article class="class-row schedule-card grid gap-4 py-6 md:grid-cols-[150px_minmax(0,1fr)_150px] md:items-center md:gap-5" id="${item.id}" data-tags="${item.period} ${item.mode}">
         <time class="font-black text-clay">${item.time}</time>
         <div>
           <h3 class="text-xl font-extrabold text-forest">${item.title}</h3>
@@ -119,6 +120,16 @@ const renderSchedule = () => {
   scheduleList.querySelectorAll("[data-book-class]").forEach((button) => {
     button.addEventListener("click", () => openBooking(button.dataset.bookClass));
   });
+};
+
+const setScheduleFilter = (filterName = "all") => {
+  currentFilter = filterName;
+  filters.forEach((item) => {
+    const isActive = item.dataset.filter === currentFilter;
+    item.classList.toggle("active", isActive);
+    item.setAttribute("aria-selected", String(isActive));
+  });
+  renderSchedule();
 };
 
 const renderTestimonials = () => {
@@ -306,13 +317,18 @@ document.addEventListener("keydown", (event) => {
 
 filters.forEach((filter) => {
   filter.addEventListener("click", () => {
-    currentFilter = filter.dataset.filter;
-    filters.forEach((item) => {
-      const isActive = item === filter;
-      item.classList.toggle("active", isActive);
-      item.setAttribute("aria-selected", String(isActive));
+    setScheduleFilter(filter.dataset.filter);
+  });
+});
+
+scheduleLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    setScheduleFilter(link.dataset.scheduleFilter || "all");
+    window.requestAnimationFrame(() => {
+      const target = document.getElementById(link.dataset.scheduleLink);
+      target?.scrollIntoView({ behavior: "smooth", block: "center" });
     });
-    renderSchedule();
   });
 });
 
