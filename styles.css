@@ -272,6 +272,31 @@ main {
   z-index: 1;
 }
 
+.testimonial-section .text-clay {
+  color: #d0a85a;
+}
+
+.testimonial-section .text-forest,
+.testimonial-section .text-ink\/62 {
+  color: rgba(255, 253, 248, 0.82);
+}
+
+.testimonial-section h2 {
+  color: #fffdf8;
+}
+
+.testimonial-section .testimonial-card h3 {
+  color: #18362d;
+}
+
+.testimonial-section .testimonial-card .text-ink\/48 {
+  color: rgba(23, 33, 29, 0.5);
+}
+
+.testimonial-section .testimonial-text {
+  color: rgba(23, 33, 29, 0.72);
+}
+
 .story-link {
   display: inline-flex;
   width: fit-content;
