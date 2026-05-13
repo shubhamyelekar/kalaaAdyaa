@@ -132,6 +132,14 @@ const setScheduleFilter = (filterName = "all") => {
   renderSchedule();
 };
 
+const highlightTarget = (target) => {
+  if (!target) return;
+  target.classList.add("target-highlight");
+  window.setTimeout(() => {
+    target.classList.remove("target-highlight");
+  }, 1800);
+};
+
 const renderTestimonials = () => {
   if (!testimonialList) return;
   const layout = testimonialList.dataset.testimonialLayout || "grid";
@@ -328,7 +336,14 @@ scheduleLinks.forEach((link) => {
     window.requestAnimationFrame(() => {
       const target = document.getElementById(link.dataset.scheduleLink);
       target?.scrollIntoView({ behavior: "smooth", block: "center" });
+      highlightTarget(target);
     });
+  });
+});
+
+document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    window.setTimeout(() => highlightTarget(document.getElementById("contact")), 450);
   });
 });
 
