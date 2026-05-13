@@ -11,6 +11,32 @@
     url("assets/vaishnavi-rishikesh-ganga-realistic.png") center / cover;
 }
 
+.teacher-section {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(208, 168, 90, 0.14), transparent 24%),
+    radial-gradient(circle at 26% 84%, rgba(82, 139, 145, 0.14), transparent 26%),
+    linear-gradient(135deg, #153029, #1f4037);
+  color: #fffdf8;
+}
+
+.teacher-section .text-clay {
+  color: #d0a85a;
+}
+
+.teacher-section .text-forest,
+.teacher-section .text-ink\/64 {
+  color: rgba(255, 253, 248, 0.78);
+}
+
+.teacher-section h2,
+.teacher-section .font-display {
+  color: #fffdf8;
+}
+
+.teacher-section .text-forest\/35 {
+  color: rgba(255, 253, 248, 0.34);
+}
+
 body {
   background:
     radial-gradient(circle at 12% 8%, rgba(208, 168, 90, 0.1), transparent 26%),
@@ -60,7 +86,8 @@ main {
 }
 
 .practice-section,
-.ganga-texture-section {
+.ganga-texture-section,
+.testimonial-section {
   position: relative;
   overflow: hidden;
   background:
@@ -71,7 +98,8 @@ main {
 }
 
 .practice-section::before,
-.ganga-texture-section::before {
+.ganga-texture-section::before,
+.testimonial-section::before {
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -84,7 +112,8 @@ main {
 }
 
 .practice-section::after,
-.ganga-texture-section::after {
+.ganga-texture-section::after,
+.testimonial-section::after {
   position: absolute;
   right: -12%;
   top: 8%;
@@ -101,7 +130,8 @@ main {
 }
 
 .practice-section > *,
-.ganga-texture-section > * {
+.ganga-texture-section > *,
+.testimonial-section > * {
   position: relative;
   z-index: 1;
 }
@@ -119,40 +149,60 @@ main {
 }
 
 .schedule-card {
+  position: relative;
   scroll-margin-top: 96px;
 }
 
 .schedule-card:target {
-  background: rgba(208, 168, 90, 0.06);
+  background: transparent;
 }
 
 .target-highlight {
+  isolation: isolate;
+  position: relative;
+}
+
+.target-highlight::before {
+  position: absolute;
+  inset: -2px 50%;
+  z-index: 0;
+  width: 100vw;
+  pointer-events: none;
+  background: rgba(208, 168, 90, 0.09);
+  content: "";
+  transform: translateX(-50%);
   animation: target-pulse 1.6s ease;
+}
+
+.target-highlight > * {
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes target-pulse {
   0%,
   100% {
-    box-shadow: inset 0 0 0 999px rgba(208, 168, 90, 0);
+    opacity: 0;
   }
 
   18%,
   70% {
-    box-shadow: inset 0 0 0 999px rgba(208, 168, 90, 0.08);
+    opacity: 1;
   }
 }
 
 .teacher-link {
   display: block;
+  color: #17211d;
   transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .teacher-link:hover,
 .teacher-link:focus-visible {
-  border-color: rgba(24, 54, 45, 0.28);
-  background: #d0a85a;
+  border-color: rgba(255, 253, 248, 0.38);
+  background: #e0bc70;
   color: #17211d;
-  box-shadow: 0 14px 30px rgba(24, 54, 45, 0.12);
+  box-shadow: 0 16px 34px rgba(9, 22, 18, 0.18);
   outline: none;
   transform: translateY(-2px);
 }
@@ -226,67 +276,34 @@ main {
   background: #f4efe1;
 }
 
-.testimonial-section {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 10% 12%, rgba(208, 168, 90, 0.14), transparent 26%),
-    radial-gradient(circle at 92% 18%, rgba(82, 139, 145, 0.18), transparent 24%),
-    linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(232, 241, 235, 0.82)),
-    repeating-linear-gradient(52deg, rgba(24, 54, 45, 0.026) 0 1px, transparent 1px 15px);
-}
-
-.testimonial-section::before {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 20% 78%, transparent 0 38%, rgba(70, 128, 132, 0.12) 39% 40%, transparent 41% 100%),
-    radial-gradient(ellipse at 30% 80%, transparent 0 42%, rgba(70, 128, 132, 0.1) 43% 44%, transparent 45% 100%),
-    linear-gradient(112deg, transparent 0 58%, rgba(208, 168, 90, 0.1) 58% 59%, transparent 59% 100%);
-  content: "";
-  opacity: 0.9;
-}
-
-.testimonial-section::after {
-  position: absolute;
-  right: clamp(18px, 8vw, 120px);
-  top: 56px;
-  width: 120px;
-  height: 120px;
-  pointer-events: none;
-  border: 1px solid rgba(24, 54, 45, 0.12);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, rgba(208, 168, 90, 0.16) 0 10%, transparent 11%),
-    conic-gradient(from 18deg, transparent 0 12%, rgba(24, 54, 45, 0.09) 12% 13%, transparent 13% 25%, rgba(24, 54, 45, 0.09) 25% 26%, transparent 26% 38%, rgba(24, 54, 45, 0.09) 38% 39%, transparent 39% 100%);
-  content: "";
-  opacity: 0.85;
-}
-
-.testimonial-section > * {
-  position: relative;
-  z-index: 1;
-}
-
-.story-link {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 2px solid rgba(24, 54, 45, 0.24);
+.story-card {
+  display: grid;
+  width: min(100%, 260px);
+  gap: 6px;
+  border: 1px solid rgba(24, 54, 45, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.72);
+  padding: 18px;
   color: #18362d;
-  font-weight: 900;
-  line-height: 1.2;
-  transition: border-color 180ms ease, color 180ms ease, gap 180ms ease;
+  box-shadow: 0 18px 44px rgba(24, 54, 45, 0.08);
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
-.story-link:hover,
-.story-link:focus-visible {
-  gap: 12px;
-  border-color: #d0a85a;
-  color: #6f3b12;
+.story-card span {
+  font-weight: 900;
+}
+
+.story-card small {
+  color: rgba(23, 33, 29, 0.58);
+  font-weight: 700;
+}
+
+.story-card:hover,
+.story-card:focus-visible {
+  border-color: rgba(208, 168, 90, 0.58);
+  background: #fffdf8;
   outline: none;
+  transform: translateY(-2px);
 }
 
 .testimonial-marquee {
