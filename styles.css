@@ -153,7 +153,10 @@ main {
 }
 
 .testimonial-card {
+  display: flex;
+  min-width: min(82vw, 380px);
   min-height: 260px;
+  flex-direction: column;
 }
 
 .testimonial-card:nth-child(3n + 2) {
@@ -162,6 +165,73 @@ main {
 
 .testimonial-card:nth-child(3n) {
   background: #f4efe1;
+}
+
+.testimonial-marquee {
+  position: relative;
+  overflow: hidden;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 8px 20px 24px;
+}
+
+.testimonial-marquee::before,
+.testimonial-marquee::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(18vw, 160px);
+  pointer-events: none;
+  content: "";
+}
+
+.testimonial-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #fbf7ee, rgba(251, 247, 238, 0));
+}
+
+.testimonial-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #fbf7ee, rgba(251, 247, 238, 0));
+}
+
+.testimonial-track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  animation: testimonial-scroll 34s linear infinite;
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+[data-testimonial-layout="grid"] .testimonial-card {
+  min-width: 0;
+}
+
+@keyframes testimonial-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track {
+    width: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    animation: none;
+  }
+
+  .testimonial-track .testimonial-card {
+    scroll-snap-align: start;
+  }
 }
 
 .booking-backdrop:not([hidden]) {

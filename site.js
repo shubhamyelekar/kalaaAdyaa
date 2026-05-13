@@ -41,7 +41,7 @@ const getInitials = (name = "") => {
 };
 
 const buildWhatsAppUrl = (details = {}) => {
-  const className = details.className || selectedClass.textContent || "Adya Yoga class";
+  const className = details.className || selectedClass?.textContent || "Adya Yoga class";
   const messageParts = ["Namaste Vaishnavi,", `I would like to book: ${className}.`];
   if (details.name) messageParts.push(`Name: ${details.name}`);
   if (details.contact) messageParts.push(`Contact: ${details.contact}`);
@@ -51,9 +51,10 @@ const buildWhatsAppUrl = (details = {}) => {
 };
 
 const getFormDetails = () => {
+  if (!bookingForm) return {};
   const formData = new FormData(bookingForm);
   return {
-    className: selectedClass.textContent,
+    className: selectedClass?.textContent || "Adya Yoga class",
     name: formData.get("name")?.toString().trim(),
     contact: formData.get("contact")?.toString().trim(),
     level: formData.get("level")?.toString(),
@@ -62,7 +63,7 @@ const getFormDetails = () => {
 };
 
 const updateContactLinks = () => {
-  selectedClassInput.value = selectedClass.textContent;
+  if (selectedClassInput && selectedClass) selectedClassInput.value = selectedClass.textContent;
   whatsappLinks.forEach((link) => {
     const details = link.dataset.whatsappSource === "drawer" ? getFormDetails() : {};
     link.href = buildWhatsAppUrl(details);
@@ -78,7 +79,7 @@ const getNextClass = () => {
 
 const updateNextClass = () => {
   const nextClass = getNextClass();
-  if (!nextClass) return;
+  if (!nextClass || !nextClassTitle || !nextClassMeta || !nextClassLocation) return;
   nextClassName = nextClass.title;
   nextClassTitle.textContent = nextClass.title;
   nextClassMeta.textContent = `${nextClass.time} - ${nextClass.duration}`;
@@ -86,6 +87,7 @@ const updateNextClass = () => {
 };
 
 const renderSchedule = () => {
+  if (!scheduleList) return;
   const visibleSchedule = schedule.filter((item) => {
     return currentFilter === "all" || item.period === currentFilter || item.mode === currentFilter;
   });
@@ -122,6 +124,7 @@ const renderSchedule = () => {
 
 const renderTestimonials = () => {
   if (!testimonialList) return;
+  const layout = testimonialList.dataset.testimonialLayout || "grid";
 
   if (!testimonials.length) {
     testimonialList.innerHTML = `
@@ -133,7 +136,7 @@ const renderTestimonials = () => {
     return;
   }
 
-  testimonialList.innerHTML = testimonials.map((testimonial) => {
+  const cardMarkup = testimonials.map((testimonial) => {
     const name = escapeHtml(testimonial.name || "Adya Yoga student");
     const text = escapeHtml(testimonial.text || "");
     const photo = testimonial.photo ? escapeHtml(testimonial.photo) : "";
@@ -154,14 +157,20 @@ const renderTestimonials = () => {
         <p class="mt-6 leading-8 text-ink/66">"${text}"</p>
       </article>
     `;
-  }).join("");
+  });
+
+  testimonialList.innerHTML = layout === "marquee"
+    ? [...cardMarkup, ...cardMarkup].join("")
+    : cardMarkup.join("");
 };
 
 const setHeaderState = () => {
+  if (!header) return;
   header.classList.toggle("scrolled", window.scrollY > 20);
 };
 
 const openBooking = (className = "Adya Yoga class") => {
+  if (!drawer || !backdrop || !selectedClass) return;
   selectedClass.textContent = className;
   updateContactLinks();
   drawer.classList.add("open");
@@ -173,6 +182,7 @@ const openBooking = (className = "Adya Yoga class") => {
 };
 
 const closeBooking = () => {
+  if (!drawer || !backdrop) return;
   drawer.classList.remove("open");
   drawer.setAttribute("aria-hidden", "true");
   backdrop.hidden = true;
@@ -198,19 +208,21 @@ practiceCards.forEach((card) => {
   });
 });
 
-navToggle.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("open");
-  header.classList.toggle("menu-open", isOpen);
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-});
+if (navToggle && nav && header) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    header.classList.toggle("menu-open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
 
-nav.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
-    nav.classList.remove("open");
-    header.classList.remove("menu-open");
-    navToggle.setAttribute("aria-expanded", "false");
-  }
-});
+  nav.addEventListener("click", (event) => {
+    if (event.target.matches("a")) {
+      nav.classList.remove("open");
+      header.classList.remove("menu-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
 document.querySelectorAll("[data-open-booking]").forEach((button) => {
   button.addEventListener("click", () => openBooking());
@@ -220,13 +232,13 @@ document.querySelectorAll("[data-book-class]").forEach((button) => {
   button.addEventListener("click", () => openBooking(button.dataset.bookClass));
 });
 
-nextClassButton.addEventListener("click", () => openBooking(nextClassName));
+if (nextClassButton) nextClassButton.addEventListener("click", () => openBooking(nextClassName));
 
-document.querySelector("[data-close-booking]").addEventListener("click", closeBooking);
-backdrop.addEventListener("click", closeBooking);
+document.querySelector("[data-close-booking]")?.addEventListener("click", closeBooking);
+backdrop?.addEventListener("click", closeBooking);
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && drawer.classList.contains("open")) closeBooking();
+  if (event.key === "Escape" && drawer?.classList.contains("open")) closeBooking();
 });
 
 filters.forEach((filter) => {
@@ -241,16 +253,16 @@ filters.forEach((filter) => {
   });
 });
 
-whatsappSubmit.addEventListener("click", () => {
+whatsappSubmit?.addEventListener("click", () => {
   if (!bookingForm.reportValidity()) return;
   formStatus.textContent = "Opening WhatsApp with your booking message.";
   window.open(buildWhatsAppUrl(getFormDetails()), "_blank", "noopener");
 });
 
-bookingForm.addEventListener("submit", () => {
-  selectedClassInput.value = selectedClass.textContent;
-  formStatus.textContent = "Sending your request.";
+bookingForm?.addEventListener("submit", () => {
+  if (selectedClassInput && selectedClass) selectedClassInput.value = selectedClass.textContent;
+  if (formStatus) formStatus.textContent = "Sending your request.";
 });
 
-bookingForm.addEventListener("input", updateContactLinks);
-bookingForm.addEventListener("change", updateContactLinks);
+bookingForm?.addEventListener("input", updateContactLinks);
+bookingForm?.addEventListener("change", updateContactLinks);
