@@ -154,8 +154,8 @@ main {
 
 .testimonial-card {
   display: flex;
-  min-width: min(72vw, 280px);
-  min-height: 236px;
+  min-width: 0;
+  min-height: 240px;
   flex-direction: column;
 }
 
@@ -170,8 +170,9 @@ main {
 .testimonial-marquee {
   position: relative;
   overflow: hidden;
-  margin-left: -20px;
-  margin-right: -20px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 8px 20px 24px;
 }
 
@@ -199,8 +200,24 @@ main {
 .testimonial-track {
   display: flex;
   width: max-content;
-  gap: 14px;
-  animation: testimonial-scroll 80s linear infinite;
+  gap: 18px;
+  animation: testimonial-scroll 92s linear infinite;
+}
+
+.testimonial-track .testimonial-card {
+  flex: 0 0 clamp(248px, 22vw, 304px);
+  padding: 24px;
+}
+
+.testimonial-track .testimonial-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+[data-testimonial-layout="grid"] .testimonial-text {
+  overflow: visible;
 }
 
 .testimonial-marquee:hover .testimonial-track,
@@ -269,5 +286,16 @@ main {
   [data-nav] button {
     justify-content: flex-start;
     padding: 14px;
+  }
+
+  .testimonial-marquee {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .testimonial-track .testimonial-card {
+    flex-basis: min(82vw, 300px);
   }
 }

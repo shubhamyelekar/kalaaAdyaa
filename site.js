@@ -154,7 +154,7 @@ const renderTestimonials = () => {
             <p class="text-sm font-semibold text-ink/48">Adya Yoga student</p>
           </div>
         </div>
-        <p class="mt-6 leading-8 text-ink/66">"${text}"</p>
+        <p class="testimonial-text mt-6 leading-8 text-ink/66">"${text}"</p>
       </article>
     `;
   });
