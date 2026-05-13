@@ -202,7 +202,10 @@
             <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">What students carry from the mat.</h2>
             <p class="mt-6 text-lg leading-8 text-ink/62">A quiet space for student experiences, reflections, and practice journeys. Testimonials are loaded from a simple static file so they can be updated anytime.</p>
           </div>
-          <a class="inline-flex min-h-12 w-fit items-center justify-center rounded-full bg-forest px-6 font-extrabold text-paper transition hover:-translate-y-0.5" href="testimonials.html">Read all stories</a>
+          <div class="flex flex-wrap gap-3">
+            <button class="inline-flex min-h-12 w-fit items-center justify-center rounded-full border border-forest/20 px-5 font-extrabold text-forest transition hover:-translate-y-0.5" type="button" data-testimonial-toggle>Pause</button>
+            <a class="inline-flex min-h-12 w-fit items-center justify-center rounded-full bg-forest px-6 font-extrabold text-paper transition hover:-translate-y-0.5" href="testimonials.html">Read all stories</a>
+          </div>
         </div>
         <div class="testimonial-marquee mt-12" aria-label="Student testimonials">
           <div class="testimonial-track" data-testimonial-list data-testimonial-layout="marquee"></div>

@@ -17,6 +17,7 @@ const nextClassButton = document.querySelector("[data-book-next-class]");
 const whatsappLinks = document.querySelectorAll("[data-whatsapp-link]");
 const practiceCards = document.querySelectorAll(".practice-card");
 const testimonialList = document.querySelector("[data-testimonial-list]");
+const testimonialToggle = document.querySelector("[data-testimonial-toggle]");
 const whatsappNumber = "919611840159";
 const schedule = window.ADYA_SCHEDULE || [];
 const testimonials = window.ADYA_TESTIMONIALS || [];
@@ -195,6 +196,12 @@ updateNextClass();
 renderSchedule();
 renderTestimonials();
 updateContactLinks();
+
+testimonialToggle?.addEventListener("click", () => {
+  const isPaused = document.body.classList.toggle("testimonials-paused");
+  testimonialToggle.textContent = isPaused ? "Resume" : "Pause";
+  testimonialToggle.setAttribute("aria-pressed", String(isPaused));
+});
 
 practiceCards.forEach((card) => {
   const toggle = card.querySelector(".practice-toggle");
