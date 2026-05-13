@@ -140,6 +140,10 @@ const highlightTarget = (target) => {
   }, 1800);
 };
 
+const shuffleItems = (items) => {
+  return [...items].sort(() => Math.random() - 0.5);
+};
+
 const renderTestimonials = () => {
   if (!testimonialList) return;
   const layout = testimonialList.dataset.testimonialLayout || "grid";
@@ -154,7 +158,7 @@ const renderTestimonials = () => {
     return;
   }
 
-  const cardMarkup = testimonials.map((testimonial) => {
+  const cardMarkup = shuffleItems(testimonials).map((testimonial) => {
     const name = escapeHtml(testimonial.name || "Adya Yoga student");
     const text = escapeHtml(testimonial.text || "");
     const photo = testimonial.photo ? escapeHtml(testimonial.photo) : "";
