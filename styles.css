@@ -141,6 +141,55 @@ main {
   transform: translateY(-2px);
 }
 
+.contact-card {
+  display: flex;
+  min-height: 126px;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(255, 253, 248, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.08);
+  padding: 18px;
+  color: #fffdf8;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+  border-color: rgba(255, 253, 248, 0.34);
+  background: rgba(255, 253, 248, 0.14);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.1);
+}
+
+.contact-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contact-card strong {
+  display: block;
+  font-weight: 900;
+}
+
+.contact-card small {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 253, 248, 0.68);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .practice-card {
   position: relative;
   min-height: 330px;
