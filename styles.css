@@ -216,27 +216,24 @@ main {
   min-width: 0;
   min-height: 240px;
   flex-direction: column;
-  border-color: rgba(255, 253, 248, 0.13);
-  background: rgba(255, 253, 248, 0.9);
 }
 
 .testimonial-card:nth-child(3n + 2) {
-  background: rgba(255, 253, 248, 0.84);
+  background: #fbf7ee;
 }
 
 .testimonial-card:nth-child(3n) {
-  background: rgba(244, 239, 225, 0.88);
+  background: #f4efe1;
 }
 
 .testimonial-section {
   position: relative;
   overflow: hidden;
-  color: #fffdf8;
   background:
-    radial-gradient(circle at 12% 16%, rgba(208, 168, 90, 0.16), transparent 28%),
-    radial-gradient(circle at 88% 18%, rgba(82, 139, 145, 0.24), transparent 26%),
-    linear-gradient(135deg, #10251f, #18362d 54%, #213f37),
-    repeating-linear-gradient(52deg, rgba(255, 253, 248, 0.035) 0 1px, transparent 1px 16px);
+    radial-gradient(circle at 10% 12%, rgba(208, 168, 90, 0.14), transparent 26%),
+    radial-gradient(circle at 92% 18%, rgba(82, 139, 145, 0.18), transparent 24%),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(232, 241, 235, 0.82)),
+    repeating-linear-gradient(52deg, rgba(24, 54, 45, 0.026) 0 1px, transparent 1px 15px);
 }
 
 .testimonial-section::before {
@@ -244,11 +241,11 @@ main {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 20% 78%, transparent 0 38%, rgba(126, 188, 188, 0.18) 39% 40%, transparent 41% 100%),
-    radial-gradient(ellipse at 30% 80%, transparent 0 42%, rgba(126, 188, 188, 0.14) 43% 44%, transparent 45% 100%),
-    linear-gradient(112deg, transparent 0 58%, rgba(208, 168, 90, 0.13) 58% 59%, transparent 59% 100%);
+    radial-gradient(ellipse at 20% 78%, transparent 0 38%, rgba(70, 128, 132, 0.12) 39% 40%, transparent 41% 100%),
+    radial-gradient(ellipse at 30% 80%, transparent 0 42%, rgba(70, 128, 132, 0.1) 43% 44%, transparent 45% 100%),
+    linear-gradient(112deg, transparent 0 58%, rgba(208, 168, 90, 0.1) 58% 59%, transparent 59% 100%);
   content: "";
-  opacity: 0.72;
+  opacity: 0.9;
 }
 
 .testimonial-section::after {
@@ -258,13 +255,13 @@ main {
   width: 120px;
   height: 120px;
   pointer-events: none;
-  border: 1px solid rgba(255, 253, 248, 0.12);
+  border: 1px solid rgba(24, 54, 45, 0.12);
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgba(208, 168, 90, 0.18) 0 10%, transparent 11%),
-    conic-gradient(from 18deg, transparent 0 12%, rgba(255, 253, 248, 0.1) 12% 13%, transparent 13% 25%, rgba(255, 253, 248, 0.1) 25% 26%, transparent 26% 38%, rgba(255, 253, 248, 0.1) 38% 39%, transparent 39% 100%);
+    radial-gradient(circle, rgba(208, 168, 90, 0.16) 0 10%, transparent 11%),
+    conic-gradient(from 18deg, transparent 0 12%, rgba(24, 54, 45, 0.09) 12% 13%, transparent 13% 25%, rgba(24, 54, 45, 0.09) 25% 26%, transparent 26% 38%, rgba(24, 54, 45, 0.09) 38% 39%, transparent 39% 100%);
   content: "";
-  opacity: 0.72;
+  opacity: 0.85;
 }
 
 .testimonial-section > * {
@@ -272,38 +269,13 @@ main {
   z-index: 1;
 }
 
-.testimonial-section .text-clay {
-  color: #d0a85a;
-}
-
-.testimonial-section .text-forest,
-.testimonial-section .text-ink\/62 {
-  color: rgba(255, 253, 248, 0.82);
-}
-
-.testimonial-section h2 {
-  color: #fffdf8;
-}
-
-.testimonial-section .testimonial-card h3 {
-  color: #18362d;
-}
-
-.testimonial-section .testimonial-card .text-ink\/48 {
-  color: rgba(23, 33, 29, 0.5);
-}
-
-.testimonial-section .testimonial-text {
-  color: rgba(23, 33, 29, 0.72);
-}
-
 .story-link {
   display: inline-flex;
   width: fit-content;
   align-items: center;
   gap: 8px;
-  border-bottom: 2px solid rgba(255, 253, 248, 0.28);
-  color: #fffdf8;
+  border-bottom: 2px solid rgba(24, 54, 45, 0.24);
+  color: #18362d;
   font-weight: 900;
   line-height: 1.2;
   transition: border-color 180ms ease, color 180ms ease, gap 180ms ease;
@@ -313,7 +285,7 @@ main {
 .story-link:focus-visible {
   gap: 12px;
   border-color: #d0a85a;
-  color: #d0a85a;
+  color: #6f3b12;
   outline: none;
 }
 
@@ -346,12 +318,12 @@ main {
 
 .testimonial-marquee::before {
   left: 0;
-  background: linear-gradient(90deg, #10251f, rgba(16, 37, 31, 0));
+  background: linear-gradient(90deg, #fbf7ee, rgba(251, 247, 238, 0));
 }
 
 .testimonial-marquee::after {
   right: 0;
-  background: linear-gradient(270deg, #213f37, rgba(33, 63, 55, 0));
+  background: linear-gradient(270deg, #fbf7ee, rgba(251, 247, 238, 0));
 }
 
 .testimonial-track {
