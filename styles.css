@@ -152,6 +152,18 @@ main {
   color: #17211d;
 }
 
+.testimonial-card {
+  min-height: 260px;
+}
+
+.testimonial-card:nth-child(3n + 2) {
+  background: #fbf7ee;
+}
+
+.testimonial-card:nth-child(3n) {
+  background: #f4efe1;
+}
+
 .booking-backdrop:not([hidden]) {
   display: block;
 }

@@ -16,10 +16,29 @@ const nextClassLocation = document.querySelector("[data-next-class-location]");
 const nextClassButton = document.querySelector("[data-book-next-class]");
 const whatsappLinks = document.querySelectorAll("[data-whatsapp-link]");
 const practiceCards = document.querySelectorAll(".practice-card");
+const testimonialList = document.querySelector("[data-testimonial-list]");
 const whatsappNumber = "919611840159";
 const schedule = window.ADYA_SCHEDULE || [];
+const testimonials = window.ADYA_TESTIMONIALS || [];
 let currentFilter = "all";
 let nextClassName = "Traditional Yoga Class";
+
+const escapeHtml = (value = "") => {
+  return value.toString().replace(/[&<>"']/g, (char) => {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "\"": "&quot;",
+      "'": "&#039;",
+    }[char];
+  });
+};
+
+const getInitials = (name = "") => {
+  const words = name.trim().split(/\s+/).filter(Boolean);
+  return words.slice(0, 2).map((word) => word[0]).join("").toUpperCase() || "AY";
+};
 
 const buildWhatsAppUrl = (details = {}) => {
   const className = details.className || selectedClass.textContent || "Adya Yoga class";
@@ -101,6 +120,43 @@ const renderSchedule = () => {
   });
 };
 
+const renderTestimonials = () => {
+  if (!testimonialList) return;
+
+  if (!testimonials.length) {
+    testimonialList.innerHTML = `
+      <article class="rounded-lg border border-forest/15 bg-paper p-7 shadow-[0_18px_50px_rgba(24,54,45,0.08)] md:col-span-2 lg:col-span-3">
+        <p class="font-display text-3xl leading-tight text-forest">Student stories will appear here soon.</p>
+        <p class="mt-4 max-w-2xl leading-7 text-ink/62">Add testimonials in <span class="font-bold text-forest">testimonials.js</span> with the student's name, text, and an optional photo path.</p>
+      </article>
+    `;
+    return;
+  }
+
+  testimonialList.innerHTML = testimonials.map((testimonial) => {
+    const name = escapeHtml(testimonial.name || "Adya Yoga student");
+    const text = escapeHtml(testimonial.text || "");
+    const photo = testimonial.photo ? escapeHtml(testimonial.photo) : "";
+    const initials = escapeHtml(getInitials(testimonial.name));
+    const avatar = photo
+      ? `<img class="size-14 rounded-full object-cover" src="${photo}" alt="${name}" loading="lazy" />`
+      : `<div class="grid size-14 place-items-center rounded-full bg-amber/30 font-black text-forest">${initials}</div>`;
+
+    return `
+      <article class="testimonial-card rounded-lg border border-forest/15 bg-paper p-7 shadow-[0_18px_50px_rgba(24,54,45,0.08)]">
+        <div class="flex items-center gap-4">
+          ${avatar}
+          <div>
+            <h3 class="text-lg font-extrabold text-forest">${name}</h3>
+            <p class="text-sm font-semibold text-ink/48">Adya Yoga student</p>
+          </div>
+        </div>
+        <p class="mt-6 leading-8 text-ink/66">"${text}"</p>
+      </article>
+    `;
+  }).join("");
+};
+
 const setHeaderState = () => {
   header.classList.toggle("scrolled", window.scrollY > 20);
 };
@@ -127,6 +183,7 @@ window.addEventListener("scroll", setHeaderState);
 setHeaderState();
 updateNextClass();
 renderSchedule();
+renderTestimonials();
 updateContactLinks();
 
 practiceCards.forEach((card) => {

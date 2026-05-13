@@ -56,6 +56,7 @@
         <a class="opacity-90 transition hover:opacity-100" href="#practice">Practice</a>
         <a class="opacity-90 transition hover:opacity-100" href="#teacher">Teacher</a>
         <a class="opacity-90 transition hover:opacity-100" href="#schedule">Schedule</a>
+        <a class="opacity-90 transition hover:opacity-100" href="#testimonials">Stories</a>
         <a class="opacity-90 transition hover:opacity-100" href="#faq">FAQ</a>
         <button class="rounded-full bg-paper px-5 py-3 font-extrabold text-forest transition hover:-translate-y-0.5" type="button" data-open-booking>Book a class</button>
       </nav>
@@ -194,6 +195,17 @@
         </div>
       </section>
 
+      <section class="px-5 py-20 md:px-10 md:py-28 lg:px-14" id="testimonials">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <p class="mb-3 text-xs font-black uppercase text-clay">Student stories</p>
+            <h2 class="font-display text-5xl leading-tight text-forest md:text-7xl">What students carry from the mat.</h2>
+            <p class="mt-6 text-lg leading-8 text-ink/62">A quiet space for student experiences, reflections, and practice journeys. Testimonials are loaded from a simple static file so they can be updated anytime.</p>
+          </div>
+        </div>
+        <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-testimonial-list></div>
+      </section>
+
       <section class="ganga-texture-section px-5 py-20 md:px-10 md:py-28 lg:px-14" id="faq">
         <div class="max-w-2xl">
           <p class="mb-3 text-xs font-black uppercase text-clay">Questions</p>
@@ -245,6 +257,7 @@
     </aside>
 
     <script src="schedule.js"></script>
+    <script src="testimonials.js"></script>
     <script src="site.js"></script>
   </body>
 </html>
