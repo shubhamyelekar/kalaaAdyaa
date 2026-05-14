@@ -16,6 +16,10 @@ window.ADYA_TESTIMONIALS = [
     text: "Feeling energetic and active throughout the day since I started doing yoga, the stretches are really helpful.",
   },
   {
+    name: "Mahesh Belur",
+    text: "Practicing yoga with Vaishnavi has been a wonderful experience. She keeps every session simple, clear, and easy to follow. What makes her classes truly special is the way she shares valuable knowledge about overall health and wellness through yoga, not just the postures. The meditation and pranayama sessions have been effective in bringing calmness, better focus, and balance into daily life. Her lively and positive energy makes every session enjoyable and motivating. Highly recommended for anyone looking to improve both physical and mental well-being through yoga.",
+  },
+  {
     name: "Ananya Rao",
     text: "Vaishnavi's classes helped me build consistency without feeling rushed. The cues are clear, the pace is steady, and I always leave feeling calmer and stronger.",
   },
